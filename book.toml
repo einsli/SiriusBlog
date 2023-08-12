@@ -8,7 +8,6 @@ description = "Sirius运维开发笔记"
 
 [rust]
 edition = "2021"
-version = "0.1.0"
 
 [build]
 build-dir = "SiriusBlog"
@@ -25,10 +24,11 @@ curly-quotes = true
 mathjax-support = false
 copy-fonts = true
 no-section-label = false
-git-repository-url = "https://github.com/rust-lang/mdBook"
+git-repository-url = "https://github.com/einsli/SiriusBlog"
 git-repository-icon = "fa-github"
-edit-url-template = "https://github.com/rust-lang/mdBook/edit/master/guide/{path}"
+edit-url-template = "https://github.com/einsli/SiriusBlog/edit/main/{path}"
 input-404 = "not-found.md"
+additional-js = ["language.js"]
 
 [output.html.print]
 enable = true
