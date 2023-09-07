@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Sirius运维开发笔记</title>
-        <meta name="robots" content="noindex" />
+        <title>linux docker 安装与配置 - Sirius运维开发笔记</title>
 
 
         <!-- Custom HTML head -->
@@ -13,21 +12,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -36,7 +35,7 @@
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "";
+            var path_to_root = "../../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
         </script>
 
@@ -84,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="operations/linux/ linux_docker_installed.html"><strong aria-hidden="true">2.1.2.</strong> linux docker 安装与配置</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="../../operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="../../operations/linux/ linux_docker_installed.html" class="active"><strong aria-hidden="true">2.1.2.</strong> linux docker 安装与配置</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -138,11 +137,14 @@
                     <h1 class="menu-title">Sirius运维开发笔记</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         <a href="https://github.com/einsli/SiriusBlog" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/einsli/SiriusBlog/edit/main/src/operations/linux/ linux_docker_installed.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
                     </div>
@@ -170,95 +172,14 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="sirius-运维笔记"><a class="header" href="#sirius-运维笔记">Sirius 运维笔记</a></h1>
-<blockquote>
-<p>运维开发攻城狮一枚，目前在杭州，主要做 CICD, K8S 运维相关,技术宅！</p>
-</blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="基础运维"><a class="header" href="#基础运维">基础运维</a></h1>
-<p>这里主要是基础运维，涉及到基础环境搭建以及配置.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="linux-基础运维"><a class="header" href="#linux-基础运维">linux 基础运维</a></h1>
-<p>这里主要是 linux 基础运维，涉及到 linux 基础环境搭建以及配置和相关问题的处理.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="linux-基础配置"><a class="header" href="#linux-基础配置">linux 基础配置</a></h1>
-<h2 id="一务器系统配置初始化脚本"><a class="header" href="#一务器系统配置初始化脚本">一、务器系统配置初始化脚本</a></h2>
-<p>当拿到一台 linux 服务器，需要对 linux 做一些操作，来保证后续部署的服务能够高效稳定的运行。</p>
-<h3 id="11-关闭-swap-分区"><a class="header" href="#11-关闭-swap-分区">1.1 关闭 swap 分区</a></h3>
-<p><strong>临时关闭</strong></p>
-<pre><code class="language-shell">swapoff -a
-</code></pre>
-<p><strong>永久关闭</strong></p>
-<p>打开文件<code>/etc/fstab</code></p>
-<pre><code class="language-shell">vim /etc/fstab
-</code></pre>
-<p>找到<code>swap</code>分区将其注释掉即可</p>
-<pre><code class="language-PlainText">#/dev/mapper/cl-swap     swap                    swap    defaults        0 0
-</code></pre>
-<p><strong>重启机器</strong></p>
-<pre><code class="language-shell">reboot
-</code></pre>
-<h3 id="12-关闭-selinux"><a class="header" href="#12-关闭-selinux">1.2 关闭 selinux</a></h3>
-<p><strong>查看 selinux 状态</strong></p>
-<pre><code class="language-shell">getenforce
-</code></pre>
-<p><img src="operations/linux/../../images/operations/linux/enable_selinux.png" alt="avar" /></p>
-<p><strong>临时关闭</strong></p>
-<pre><code class="language-shell">setenforce 0
-</code></pre>
-<p>重启系统后还会开启</p>
-<p><strong>永久关闭</strong></p>
-<pre><code class="language-shell">sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
-sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
-</code></pre>
-<p><strong>重启机器</strong></p>
-<pre><code class="language-shell">reboot
-</code></pre>
-<p><strong>关闭后查看 selinux 状态</strong></p>
-<pre><code class="language-shell">getenforce
-</code></pre>
-<p><img src="operations/linux/../../images/operations/linux/disable_selinux.png" alt="avar" /></p>
-<h3 id="13-关闭防火墙"><a class="header" href="#13-关闭防火墙">1.3 关闭防火墙</a></h3>
-<p>关闭防火墙命令如下</p>
-<pre><code class="language-shell">systemctl stop firewalld &amp;&amp; systemctl disable firewalld
-</code></pre>
-<h3 id="14-主机名配置"><a class="header" href="#14-主机名配置">1.4 主机名配置</a></h3>
-<p>拿到主机后，需要给服务器配置一个主机名，就像每个人有自己的名字一样</p>
-<p>配置主机名命令如下</p>
-<pre><code class="language-shell">hostnamectl --static set-hostname sirius
-</code></pre>
-<h3 id="15-ssh-配置"><a class="header" href="#15-ssh-配置">1.5 ssh 配置</a></h3>
-<p><strong>关闭 DNS 反查</strong>
-使用了 dns 反查，这种情况下当 ssh 登录某个 IP 时，系统会试图通过 DNS 反查相对应的域名，如果 DNS 中没有这个 IP 的域名解析，则会等到 DNS 查询超时才会进行下一步，消耗很长时间。</p>
-<p>关闭 dns 反查命令如下</p>
-<pre><code class="language-shell">sed -ie &quot;/UseDNS/s/yes/no/g;/UseDNS/s/#//g&quot; /etc/ssh/sshd_config
-</code></pre>
-<p><strong>修改 ssh 超时时间</strong></p>
-<pre><code class="language-shell">vim /etc/ssh/sshd_config
-</code></pre>
-<p>修改下面两项</p>
-<pre><code class="language-PlainText">ClientAliveInterval 60
-ClientAliveCountMax 30
-</code></pre>
-<p><strong>重启 ssh 服务</strong></p>
-<pre><code class="language-shell">systemctl restart sshd
-</code></pre>
-<h3 id="16-修改系统时区"><a class="header" href="#16-修改系统时区">1.6 修改系统时区</a></h3>
-<p>查看系统时区是否正常</p>
-<p><img src="operations/linux/../../images/operations/linux/shanghai_timezone.png" alt="avar" /></p>
-<p>上述图片是已经修改正常状态</p>
-<p>修改系统时间命令如下</p>
-<pre><code class="language-shell">mv /etc/localtime /etc/localtime.bak
--s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-</code></pre>
-<p>然后输入上图命令即可验证时间即可</p>
-<h4 id="参考文档"><a class="header" href="#参考文档">参考文档</a></h4>
-<p><a href="http://bluebiu.com/blog/linux-ssh-session-alive.html">1.Linux 使用 ssh 超时断开连接的真正原因</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="linux-docker-安装与配置"><a class="header" href="#linux-docker-安装与配置">linux docker 安装与配置</a></h1>
+                        <h1 id="linux-docker-安装与配置"><a class="header" href="#linux-docker-安装与配置">linux docker 安装与配置</a></h1>
 <h2 id="一docker-离线安装"><a class="header" href="#一docker-离线安装">一、docker 离线安装</a></h2>
 <h3 id="11下载离线安装包"><a class="header" href="#11下载离线安装包">1.1、下载离线安装包</a></h3>
 <blockquote>
 <p>问地址: <a href="https://download.docker.com/linux/static/stable/x86_64/">docker 离线下载地址</a></p>
 <p>选择对应版本,此处选择<code>docker-20-10.8.tgz</code></p>
 </blockquote>
-<p><img src="operations/linux/../../images/operations/linux/docker_version_selected.png" alt="avatar" /></p>
+<p><img src="../../images/operations/linux/docker_version_selected.png" alt="avatar" /></p>
 <p>可以下载到本地后上传至服务器，或者在服务器执行以下命令直接下载</p>
 <pre><code class="language-shell">yum -y install wget &amp;&amp; wget https://download.docker.com/linux/static/stable/x86_64/docker-20.10.8.tgz
 </code></pre>
@@ -267,7 +188,7 @@ ClientAliveCountMax 30
 <pre><code class="language-shell">tar -zxvf docker-20.10.8.tgz
 </code></pre>
 <p>解压后会得到一个<code>docker</code>文件夹</p>
-<p><img src="operations/linux/../../images/operations/linux/docker_extract.png" alt="avatar" /></p>
+<p><img src="../../images/operations/linux/docker_extract.png" alt="avatar" /></p>
 <p>执行以下命令，将 docker 命令添加到<code>/usr/bin/</code>目录下</p>
 <pre><code class="language-shell">cp docker/* /usr/bin/
 </code></pre>
@@ -275,7 +196,7 @@ ClientAliveCountMax 30
 <p>输入以下命令，验证是否生效</p>
 <pre><code class="language-shell">docker version
 </code></pre>
-<p><img src="operations/linux/../../images/operations/linux/docker_test.png" alt="avatar" /></p>
+<p><img src="../../images/operations/linux/docker_test.png" alt="avatar" /></p>
 <p>出现上述则说明安装成功，最下面的报错可以忽略，因为目前<code>docker</code>还没启动</p>
 <h3 id="13启动-docker"><a class="header" href="#13启动-docker">1.3、启动 docker</a></h3>
 <p>需要配置 docker.service</p>
@@ -323,7 +244,7 @@ EOF
 <p>输入以下命令，即可查看 docker 是否启动</p>
 <pre><code class="language-shell">systemctl status docker
 </code></pre>
-<p><img src="operations/linux/../../images/operations/linux/docker_status.png" alt="avatar" /></p>
+<p><img src="../../images/operations/linux/docker_status.png" alt="avatar" /></p>
 <p>启动成功，到此 docker 安装结束!</p>
 <h2 id="二docker-在线安装"><a class="header" href="#二docker-在线安装">二、docker 在线安装</a></h2>
 <h3 id="21卸载已有-docker-服务"><a class="header" href="#21卸载已有-docker-服务">2.1、卸载已有 docker 服务</a></h3>
@@ -424,16 +345,20 @@ eof
 <p>重新启动 docker</p>
 <pre><code class="language-shell">systemctl restart docker
 </code></pre>
-<h4 id="参考文档-1"><a class="header" href="#参考文档-1">参考文档</a></h4>
+<h4 id="参考文档"><a class="header" href="#参考文档">参考文档</a></h4>
 <p><a href="https://blog.csdn.net/Sara_cloud/article/details/111193087">1.Docker 系列之一：在线安装 docker 和下载镜像</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="云原生"><a class="header" href="#云原生">云原生</a></h1>
-<p>这里主要是云原生运维，涉及到 docker,k8s.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../operations/linux/linux_base_config.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
+                            <a rel="next" href="../../cloud_operations.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -441,7 +366,13 @@ eof
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../operations/linux/linux_base_config.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
+                    <a rel="next" href="../../cloud_operations.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
@@ -470,22 +401,17 @@ eof
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="language.js"></script>
+        <script src="../../language.js"></script>
 
-        <script>
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
 
     </div>
     </body>
