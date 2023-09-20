@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="operations/linux/ linux_docker_installed.html"><strong aria-hidden="true">2.1.2.</strong> linux docker 安装与配置</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_kernel_upgrade.html"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级</a></li></ol></li><li class="chapter-item expanded "><a href="operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/docker/linux_docker_installed.html"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item expanded "><a href="operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -251,14 +251,153 @@ ClientAliveCountMax 30
 <p>然后输入上图命令即可验证时间即可</p>
 <h4 id="参考文档"><a class="header" href="#参考文档">参考文档</a></h4>
 <p><a href="http://bluebiu.com/blog/linux-ssh-session-alive.html">1.Linux 使用 ssh 超时断开连接的真正原因</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="linux-内核升级"><a class="header" href="#linux-内核升级">linux 内核升级</a></h1>
+<h2 id="一在线升级"><a class="header" href="#一在线升级">一、在线升级</a></h2>
+<p>本升级方法适用于所有 Centos7.x 系列的 OS</p>
+<h3 id="11-查看当前内核版本"><a class="header" href="#11-查看当前内核版本">1.1 查看当前内核版本</a></h3>
+<pre><code class="language-shell">$ uname -r
+3.10.0-514.el7.x86_64
+
+$ uname -a
+Linux hecs-133409 4.18.0-240.10.1.el8_3.x86_64 #1 SMP Mon Jan 18 17:05:51 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+
+$ cat /etc/redhat-release
+CentOS Linux release 7.3.1611 (Core)
+</code></pre>
+<h3 id="22-升级内核"><a class="header" href="#22-升级内核">2.2 升级内核</a></h3>
+<h4 id="221-更新-yum-仓库"><a class="header" href="#221-更新-yum-仓库">2.2.1 更新 yum 仓库</a></h4>
+<pre><code class="language-shell">yum update
+</code></pre>
+<h4 id="222-启用-elrepo-仓库"><a class="header" href="#222-启用-elrepo-仓库">2.2.2 启用 ELRepo 仓库</a></h4>
+<p>ELRepo 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL 的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。
+ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡驱动、网络驱动、声卡驱动和摄像头驱动等。</p>
+<h4 id="1-导入-elrepo-仓库的公共密钥"><a class="header" href="#1-导入-elrepo-仓库的公共密钥">(1) 导入 ELRepo 仓库的公共密钥</a></h4>
+<pre><code class="language-shell">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+</code></pre>
+<h4 id="2-安装-elrepo-仓库的-yum-源"><a class="header" href="#2-安装-elrepo-仓库的-yum-源">(2) 安装 ELRepo 仓库的 yum 源</a></h4>
+<pre><code class="language-shell">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
+</code></pre>
+<h4 id="3-查看可用的系统内核包"><a class="header" href="#3-查看可用的系统内核包">(3) 查看可用的系统内核包</a></h4>
+<pre><code class="language-shell">yum --disablerepo=&quot;*&quot; --enablerepo=&quot;elrepo-kernel&quot; list available
+</code></pre>
+<p>输出如下</p>
+<pre><code class="language-PlainText">Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+* elrepo-kernel: mirrors.tuna.tsinghua.edu.cn
+  elrepo-kernel                                                                         | 2.9 kB  00:00:00
+  elrepo-kernel/primary_db                                                              | 1.8 MB  00:00:03
+  Available Packages
+  kernel-lt.x86_64                                   4.4.155-1.el7.elrepo                    elrepo-kernel
+  kernel-lt-devel.x86_64                             4.4.155-1.el7.elrepo                    elrepo-kernel
+  kernel-lt-doc.noarch                               4.4.155-1.el7.elrepo                    elrepo-kernel
+  kernel-lt-headers.x86_64                           4.4.155-1.el7.elrepo                    elrepo-kernel
+  kernel-lt-tools.x86_64                             4.4.155-1.el7.elrepo                    elrepo-kernel
+  kernel-lt-tools-libs.x86_64                        4.4.155-1.el7.elrepo                    elrepo-kernel
+  kernel-lt-tools-libs-devel.x86_64                  4.4.155-1.el7.elrepo                    elrepo-kernel
+  kernel-ml.x86_64                                   4.18.7-1.el7.elrepo                     elrepo-kernel
+  kernel-ml-devel.x86_64                             4.18.7-1.el7.elrepo                     elrepo-kernel
+  kernel-ml-doc.noarch                               4.18.7-1.el7.elrepo                     elrepo-kernel
+  kernel-ml-headers.x86_64                           4.18.7-1.el7.elrepo                     elrepo-kernel
+  kernel-ml-tools.x86_64                             4.18.7-1.el7.elrepo                     elrepo-kernel
+  kernel-ml-tools-libs.x86_64                        4.18.7-1.el7.elrepo                     elrepo-kernel
+  kernel-ml-tools-libs-devel.x86_64                  4.18.7-1.el7.elrepo                     elrepo-kernel
+  perf.x86_64                                        4.18.7-1.el7.elrepo                     elrepo-kernel
+  python-perf.x86_64                                  4.18.7-1.el7.elrepo                    elrepo-kernel
+</code></pre>
+<h4 id="4-安装最新版本内核"><a class="header" href="#4-安装最新版本内核">(4) 安装最新版本内核</a></h4>
+<pre><code class="language-shell">yum --enablerepo=elrepo-kernel install kernel-ml
+</code></pre>
+<p><font color='red'><strong>--enablerepo</strong></font> 选项开启 CentOS 系统上的指定仓库。默认开启的是<font color='red'><strong>elrepo</strong></font>，这里用 <font color='red'><strong>-kernel</strong></font> 替换</p>
+<h4 id="5-设置-grub2"><a class="header" href="#5-设置-grub2">(5) 设置 grub2</a></h4>
+<p>内核安装好后，需要设置为默认启动选项并重启后才会生效</p>
+<p>1、 查看系统上的所有可用内核</p>
+<pre><code class="language-shell">awk -F\' '$1==&quot;menuentry &quot; {print i++ &quot; : &quot; $2}' /etc/grub2.cfg
+</code></pre>
+<p>输出如下</p>
+<pre><code class="language-PlainText">0 : CentOS Linux (4.18.7-1.el7.elrepo.x86_64) 7 (Core)
+1 : CentOS Linux (3.10.0-862.11.6.el7.x86_64) 7 (Core)
+2 : CentOS Linux (3.10.0-514.el7.x86_64) 7 (Core)
+3 : CentOS Linux (0-rescue-063ec330caa04d4baae54c6902c62e54) 7 (Core)
+</code></pre>
+<p>2、设置新的内核为 grub2 的默认版本</p>
+<p>服务器上存在 4 个内核，我们要使用 4.18 这个版本，可以通过 grub2-set-default 0 命令或编辑 /etc/default/grub 文件来设置</p>
+<p>方法一、通过 <font color='red'><strong>grub2-set-default 0</strong></font> 命令设置</p>
+<p>其中 0 是上面查询出来的可用内核</p>
+<pre><code class="language-shell">grub2-set-default 0
+</code></pre>
+<p>方法二、编辑 <font color='red'><strong>/etc/default/grub</strong></font> 文件
+设置 GRUB_DEFAULT=0，通过上面查询显示的编号为 0 的内核作为默认内核</p>
+<pre><code class="language-shell">vim /etc/default/grub
+</code></pre>
+<pre><code class="language-PlainText">GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR=&quot;$(sed 's, release .*$,,g' /etc/system-release)&quot;
+GRUB_DEFAULT=0
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT=&quot;console&quot;
+GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rd.lvm.lv=cl/root rhgb quiet&quot;
+GRUB_DISABLE_RECOVERY=&quot;true&quot;
+</code></pre>
+<p>3、生成 grub 配置文件并重启</p>
+<pre><code class="language-shell">grub2-mkconfig -o /boot/grub2/grub.cfg
+</code></pre>
+<p>输出如下</p>
+<pre><code class="language-PlainText">Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-4.18.7-1.el7.elrepo.x86_64
+Found initrd image: /boot/initramfs-4.18.7-1.el7.elrepo.x86_64.img
+Found linux image: /boot/vmlinuz-3.10.0-862.11.6.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-862.11.6.el7.x86_64.img
+Found linux image: /boot/vmlinuz-3.10.0-514.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-514.el7.x86_64.img
+Found linux image: /boot/vmlinuz-0-rescue-063ec330caa04d4baae54c6902c62e54
+Found initrd image: /boot/initramfs-0-rescue-063ec330caa04d4baae54c6902c62e54.img
+done
+</code></pre>
+<p>重启</p>
+<pre><code class="language-shell">reboot
+</code></pre>
+<p>4、验证</p>
+<pre><code class="language-shell">uname -r
+</code></pre>
+<p>输出如下</p>
+<pre><code class="language-PlainText">4.18.7-1.el7.elrepo.x86_64
+</code></pre>
+<h3 id="23-删除旧的内核可选"><a class="header" href="#23-删除旧的内核可选">2.3 删除旧的内核（可选）</a></h3>
+<h4 id="231-查看系统中全部的内核"><a class="header" href="#231-查看系统中全部的内核">2.3.1 查看系统中全部的内核</a></h4>
+<pre><code class="language-shell">rpm -qa | grep kernel
+</code></pre>
+<p>输出如下</p>
+<pre><code class="language-PlainText">kernel-3.10.0-514.el7.x86_64
+kernel-ml-4.18.7-1.el7.elrepo.x86_64
+kernel-tools-libs-3.10.0-862.11.6.el7.x86_64
+kernel-tools-3.10.0-862.11.6.el7.x86_64
+kernel-3.10.0-862.11.6.el7.x86_64
+</code></pre>
+<h4 id="232-删除内核"><a class="header" href="#232-删除内核">2.3.2 删除内核</a></h4>
+<p>方法一 通过 <font color='red'><strong>yum remove</strong></font>删除</p>
+<pre><code class="language-shell">yum remove kernel-3.10.0-514.el7.x86_64 \
+kernel-ml-4.18.7-1.el7.elrepo.x86_64 \
+kernel-tools-libs-3.10.0-862.11.6.el7.x86_64 \
+kernel-tools-3.10.0-862.11.6.el7.x86_64 \
+kernel-3.10.0-862.11.6.el7.x86_64
+</code></pre>
+<p>方法二：使用 <font color='red'><strong>yum-utils</strong></font>工具删除</p>
+<p>如果安装的内核不多于 3 个，<font color='red'><strong>yum-utils</strong></font> 工具不会删除任何一个。只有在安装的内核大于 3 个时，才会自动删除旧内核。</p>
+<p>安装 yum-utils</p>
+<pre><code class="language-shell">yum install yum-utils
+</code></pre>
+<p>删除旧版本</p>
+<pre><code class="language-shell">package-cleanup --oldkernels
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="docker-基础运维"><a class="header" href="#docker-基础运维">docker 基础运维</a></h1>
+<p>这里主要是 docker 基础运维，涉及到 docker 基础环境搭建以及配置和相关问题的处理.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="linux-docker-安装与配置"><a class="header" href="#linux-docker-安装与配置">linux docker 安装与配置</a></h1>
 <h2 id="一docker-离线安装"><a class="header" href="#一docker-离线安装">一、docker 离线安装</a></h2>
 <h3 id="11下载离线安装包"><a class="header" href="#11下载离线安装包">1.1、下载离线安装包</a></h3>
 <blockquote>
-<p>问地址: <a href="https://download.docker.com/linux/static/stable/x86_64/">docker 离线下载地址</a></p>
+<p>访问地址: <a href="https://download.docker.com/linux/static/stable/x86_64/">docker 离线下载地址</a></p>
 <p>选择对应版本,此处选择<code>docker-20-10.8.tgz</code></p>
 </blockquote>
-<p><img src="operations/linux/../../images/operations/linux/docker_version_selected.png" alt="avatar" /></p>
+<p><img src="operations/docker/../../images/operations/docker/docker_version_selected.png" alt="avatar" /></p>
 <p>可以下载到本地后上传至服务器，或者在服务器执行以下命令直接下载</p>
 <pre><code class="language-shell">yum -y install wget &amp;&amp; wget https://download.docker.com/linux/static/stable/x86_64/docker-20.10.8.tgz
 </code></pre>
@@ -267,7 +406,7 @@ ClientAliveCountMax 30
 <pre><code class="language-shell">tar -zxvf docker-20.10.8.tgz
 </code></pre>
 <p>解压后会得到一个<code>docker</code>文件夹</p>
-<p><img src="operations/linux/../../images/operations/linux/docker_extract.png" alt="avatar" /></p>
+<p><img src="operations/docker/../../images/operations/docker/docker_extract.png" alt="avatar" /></p>
 <p>执行以下命令，将 docker 命令添加到<code>/usr/bin/</code>目录下</p>
 <pre><code class="language-shell">cp docker/* /usr/bin/
 </code></pre>
@@ -275,7 +414,7 @@ ClientAliveCountMax 30
 <p>输入以下命令，验证是否生效</p>
 <pre><code class="language-shell">docker version
 </code></pre>
-<p><img src="operations/linux/../../images/operations/linux/docker_test.png" alt="avatar" /></p>
+<p><img src="operations/docker/../../images/operations/docker/docker_test.png" alt="avatar" /></p>
 <p>出现上述则说明安装成功，最下面的报错可以忽略，因为目前<code>docker</code>还没启动</p>
 <h3 id="13启动-docker"><a class="header" href="#13启动-docker">1.3、启动 docker</a></h3>
 <p>需要配置 docker.service</p>
@@ -323,7 +462,7 @@ EOF
 <p>输入以下命令，即可查看 docker 是否启动</p>
 <pre><code class="language-shell">systemctl status docker
 </code></pre>
-<p><img src="operations/linux/../../images/operations/linux/docker_status.png" alt="avatar" /></p>
+<p><img src="operations/docker/../../images/operations/docker/docker_status.png" alt="avatar" /></p>
 <p>启动成功，到此 docker 安装结束!</p>
 <h2 id="二docker-在线安装"><a class="header" href="#二docker-在线安装">二、docker 在线安装</a></h2>
 <h3 id="21卸载已有-docker-服务"><a class="header" href="#21卸载已有-docker-服务">2.1、卸载已有 docker 服务</a></h3>
@@ -426,6 +565,32 @@ eof
 </code></pre>
 <h4 id="参考文档-1"><a class="header" href="#参考文档-1">参考文档</a></h4>
 <p><a href="https://blog.csdn.net/Sara_cloud/article/details/111193087">1.Docker 系列之一：在线安装 docker 和下载镜像</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="linux-docker-compose-安装"><a class="header" href="#linux-docker-compose-安装">linux docker-compose 安装</a></h1>
+<h2 id="前期准备"><a class="header" href="#前期准备">前期准备</a></h2>
+<ul>
+<li>
+<p>安装之前，请先确保 docker 已经安装，如果没有安装，请参考<a href="operations/docker/linux_docker_installed.html">linux docker 安装与配置</a></p>
+</li>
+<li>
+<p>docker-compose 各版本 <a href="https://github.com/docker/compose/releases">下载地址</a></p>
+</li>
+</ul>
+<h2 id="二进制安装-docker-compose"><a class="header" href="#二进制安装-docker-compose">二进制安装 docker-compose</a></h2>
+<p>1、下载对应 linux 版本的 docker-compose 二进制文件</p>
+<pre><code class="language-shell">yum -y install wget
+wget https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-linux-x86_64
+</code></pre>
+<p>2、赋予执行权限</p>
+<pre><code class="language-shell">chmod +x docker-compose-linux-x86_64
+</code></pre>
+<p>3、移动到<code>/usr/bin/</code> 路径下，并重命名为<code>docker-compose</code></p>
+<pre><code class="language-shell">mv docker-compose-linux-x86_64 /usr/bin/docker-compose
+</code></pre>
+<p>4、验证并查看版本</p>
+<pre><code class="language-shell">docker-compose version
+</code></pre>
+<p>如下图所示，则安装成功</p>
+<p><img src="operations/docker/../../images/operations/docker/docker-compose-version.png" alt="avatar" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="云原生"><a class="header" href="#云原生">云原生</a></h1>
 <p>这里主要是云原生运维，涉及到 docker,k8s.</p>
 

@@ -4,11 +4,11 @@
 
 ### 1.1、下载离线安装包
 
-> 问地址: [docker 离线下载地址](https://download.docker.com/linux/static/stable/x86_64/)
+> 访问地址: [docker 离线下载地址](https://download.docker.com/linux/static/stable/x86_64/)
 >
 > 选择对应版本,此处选择`docker-20-10.8.tgz`
 
-![avatar](../../images/operations/linux/docker_version_selected.png)
+![avatar](../../images/operations/docker/docker_version_selected.png)
 
 可以下载到本地后上传至服务器，或者在服务器执行以下命令直接下载
 
@@ -26,7 +26,7 @@ tar -zxvf docker-20.10.8.tgz
 
 解压后会得到一个`docker`文件夹
 
-![avatar](../../images/operations/linux/docker_extract.png)
+![avatar](../../images/operations/docker/docker_extract.png)
 
 执行以下命令，将 docker 命令添加到`/usr/bin/`目录下
 
@@ -42,7 +42,7 @@ cp docker/* /usr/bin/
 docker version
 ```
 
-![avatar](../../images/operations/linux/docker_test.png)
+![avatar](../../images/operations/docker/docker_test.png)
 
 出现上述则说明安装成功，最下面的报错可以忽略，因为目前`docker`还没启动
 
@@ -113,7 +113,7 @@ systemctl enable docker
 systemctl status docker
 ```
 
-![avatar](../../images/operations/linux/docker_status.png)
+![avatar](../../images/operations/docker/docker_status.png)
 
 启动成功，到此 docker 安装结束!
 

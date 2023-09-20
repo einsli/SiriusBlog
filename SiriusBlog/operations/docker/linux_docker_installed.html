@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>linux docker 安装与配置 - Sirius运维开发笔记</title>
+        <title>docker 安装与配置 - Sirius运维开发笔记</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="../../operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="../../operations/linux/ linux_docker_installed.html" class="active"><strong aria-hidden="true">2.1.2.</strong> linux docker 安装与配置</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="../../operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_kernel_upgrade.html"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_installed.html" class="active"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -143,7 +143,7 @@
                         <a href="https://github.com/einsli/SiriusBlog" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/einsli/SiriusBlog/edit/main/src/operations/linux/ linux_docker_installed.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/einsli/SiriusBlog/edit/main/src/operations/docker/linux_docker_installed.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -176,10 +176,10 @@
 <h2 id="一docker-离线安装"><a class="header" href="#一docker-离线安装">一、docker 离线安装</a></h2>
 <h3 id="11下载离线安装包"><a class="header" href="#11下载离线安装包">1.1、下载离线安装包</a></h3>
 <blockquote>
-<p>问地址: <a href="https://download.docker.com/linux/static/stable/x86_64/">docker 离线下载地址</a></p>
+<p>访问地址: <a href="https://download.docker.com/linux/static/stable/x86_64/">docker 离线下载地址</a></p>
 <p>选择对应版本,此处选择<code>docker-20-10.8.tgz</code></p>
 </blockquote>
-<p><img src="../../images/operations/linux/docker_version_selected.png" alt="avatar" /></p>
+<p><img src="../../images/operations/docker/docker_version_selected.png" alt="avatar" /></p>
 <p>可以下载到本地后上传至服务器，或者在服务器执行以下命令直接下载</p>
 <pre><code class="language-shell">yum -y install wget &amp;&amp; wget https://download.docker.com/linux/static/stable/x86_64/docker-20.10.8.tgz
 </code></pre>
@@ -188,7 +188,7 @@
 <pre><code class="language-shell">tar -zxvf docker-20.10.8.tgz
 </code></pre>
 <p>解压后会得到一个<code>docker</code>文件夹</p>
-<p><img src="../../images/operations/linux/docker_extract.png" alt="avatar" /></p>
+<p><img src="../../images/operations/docker/docker_extract.png" alt="avatar" /></p>
 <p>执行以下命令，将 docker 命令添加到<code>/usr/bin/</code>目录下</p>
 <pre><code class="language-shell">cp docker/* /usr/bin/
 </code></pre>
@@ -196,7 +196,7 @@
 <p>输入以下命令，验证是否生效</p>
 <pre><code class="language-shell">docker version
 </code></pre>
-<p><img src="../../images/operations/linux/docker_test.png" alt="avatar" /></p>
+<p><img src="../../images/operations/docker/docker_test.png" alt="avatar" /></p>
 <p>出现上述则说明安装成功，最下面的报错可以忽略，因为目前<code>docker</code>还没启动</p>
 <h3 id="13启动-docker"><a class="header" href="#13启动-docker">1.3、启动 docker</a></h3>
 <p>需要配置 docker.service</p>
@@ -244,7 +244,7 @@ EOF
 <p>输入以下命令，即可查看 docker 是否启动</p>
 <pre><code class="language-shell">systemctl status docker
 </code></pre>
-<p><img src="../../images/operations/linux/docker_status.png" alt="avatar" /></p>
+<p><img src="../../images/operations/docker/docker_status.png" alt="avatar" /></p>
 <p>启动成功，到此 docker 安装结束!</p>
 <h2 id="二docker-在线安装"><a class="header" href="#二docker-在线安装">二、docker 在线安装</a></h2>
 <h3 id="21卸载已有-docker-服务"><a class="header" href="#21卸载已有-docker-服务">2.1、卸载已有 docker 服务</a></h3>
@@ -352,11 +352,11 @@ eof
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../operations/linux/linux_base_config.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../operations/docker.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../../cloud_operations.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../operations/docker/linux_docker_compose_installed.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -366,11 +366,11 @@ eof
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../operations/linux/linux_base_config.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../operations/docker.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../../cloud_operations.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../operations/docker/linux_docker_compose_installed.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
