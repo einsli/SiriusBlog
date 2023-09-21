@@ -2,9 +2,9 @@
 
 ## 前期准备
 
-- 安装之前，请先确保 docker 已经安装，如果没有安装，请参考[linux docker 安装与配置](linux_docker_installed.md)
-
-- docker-compose 各版本 [下载地址](https://github.com/docker/compose/releases)
+> 安装之前，请先确保 docker 已经安装，如果没有安装，请参考[linux docker 安装与配置](linux_docker_installed.md)
+>
+> docker-compose 各版本 [下载地址](https://github.com/docker/compose/releases)
 
 ## 二进制安装 docker-compose
 
