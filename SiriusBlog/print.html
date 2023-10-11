@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_kernel_upgrade.html"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级</a></li></ol></li><li class="chapter-item expanded "><a href="operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/docker/linux_docker_installed.html"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item expanded "><a href="operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li></ol></li><li class="chapter-item expanded "><a href="operations/redis.html"><strong aria-hidden="true">2.3.</strong> redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/redis/redis_binary_installed.html"><strong aria-hidden="true">2.3.1.</strong> redis 二进制安装与配置</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/monitor.html"><strong aria-hidden="true">3.1.</strong> 监控</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/monitor/n9e_install.html"><strong aria-hidden="true">3.1.1.</strong> 夜莺监控安装配置</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item "><a href="operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item "><a href="operations/linux/linux_kernel_upgrade.html"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级</a></li><li class="chapter-item "><a href="operations/linux/linux_supervisor_install.html"><strong aria-hidden="true">2.1.3.</strong> supervisord 安装配置</a></li></ol></li><li class="chapter-item "><a href="operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="operations/docker/linux_docker_installed.html"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item "><a href="operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li></ol></li><li class="chapter-item "><a href="operations/redis.html"><strong aria-hidden="true">2.3.</strong> redis</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="operations/redis/redis_binary_installed.html"><strong aria-hidden="true">2.3.1.</strong> redis 二进制安装与配置</a></li></ol></li></ol></li><li class="chapter-item "><a href="cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="cloud_operations/monitor.html"><strong aria-hidden="true">3.1.</strong> 监控</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="cloud_operations/monitor/n9e_install.html"><strong aria-hidden="true">3.1.1.</strong> 夜莺监控安装配置</a></li><li class="chapter-item "><a href="cloud_operations/monitor/n9e_ldap_config.html"><strong aria-hidden="true">3.1.2.</strong> 夜莺配置 ldap 单点登录</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -391,6 +391,64 @@ kernel-3.10.0-862.11.6.el7.x86_64
 <p>删除旧版本</p>
 <pre><code class="language-shell">package-cleanup --oldkernels
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="supervisor-安装与配置"><a class="header" href="#supervisor-安装与配置">supervisor 安装与配置</a></h1>
+<p>执行以下命令安装 supervisord</p>
+<pre><code class="language-shell">yum install supervisor
+</code></pre>
+<p>查看版本</p>
+<pre><code class="language-shell">supervisord --version
+</code></pre>
+<p>如果需要配置界面访问需要修改<code>supervisord.conf</code></p>
+<p>路径如下</p>
+<pre><code class="language-PlainText">/etc/supervisord.conf
+</code></pre>
+<p>修改以下几行</p>
+<pre><code class="language-PlainText">#启用访问web控制界面，inet_http_server 修改如下
+[inet_http_server]
+port=*:9001
+
+#设置账户和密码
+username=user
+password=passw0rd
+
+#include part
+[include]
+files = supervisord.d/*.ini
+</code></pre>
+<p>子进程配置文件路径：<code>/etc/supervisord.d/</code></p>
+<p>这是官网的配置文件 👉🏻<a href="http://www.supervisord.org/configuration.html">supervisord 配置文件参考</a></p>
+<p>在<code>/etc/supervisord.d/</code> 创建<code>test-server.ini</code>,用于启动一个<code>java</code>服务</p>
+<pre><code class="language-ini">[program:javaserver]
+command=/usr/bin/java -jar app.jar ; 输入执行命令，这里表示 dotnet  demo.dll
+directory=/opt/test-server ; 应用程序根目录
+autostart=true ; 是否自动启动，当 supervisor 加载该配置文件的时候立即启动它
+autorestart=true ; 是否自动重启，当执行 dotnet  Deploy.Linux.dll 启动失败时，会重复的自动重启
+logfile_maxbytes=50MB ; 该配置文件输出单个日志文件的大小
+logfile_backups=10 ; 日志备份个数
+loglevel=info ; 记录日志级别
+stderr_logfile=/data/logs/java-server.err.log ; 指定标准错误输出日志文件
+stdout_logfile=/data/logs/java-server.access.log ; 指定标准输出日志文件
+environment=ASPNETCORE_ENVIRONMENT=Production ; 可配置环境变量，该环境变量将通过执行 dotnet  Deploy.Linux.dll 命令的时候传入到 .NET Core 应用程序中
+user=root ;启动服务的用户
+stopsignal=INT
+redirect_stderr=true
+</code></pre>
+<p>创建日志路径</p>
+<pre><code class="language-shell">mkdir -p /data/logs/
+</code></pre>
+<p>重新加载配置</p>
+<pre><code class="language-shell">systemctl daemon-reload
+</code></pre>
+<p>启动<code>supervisord</code>并设置为开机启动</p>
+<pre><code class="language-shell"># 启动supervisord
+systemctl start supervisord
+
+# 设置开机启动
+systemctl enable supervisord
+
+# 查看supervisord 状态
+systemctl status supervisord
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="docker-基础运维"><a class="header" href="#docker-基础运维">docker 基础运维</a></h1>
 <p>这里主要是 docker 基础运维，涉及到 docker 基础环境搭建以及配置和相关问题的处理.</p>
 <p><strong>目录</strong></p>
@@ -677,6 +735,9 @@ systemctl start redis
 <p>这里主要是云原生运维，涉及到 docker,k8s,prometheus 监控等一系列云原生相关组件的安装配置与使用问题.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="云原生监控"><a class="header" href="#云原生监控">云原生监控</a></h1>
 <p>这里主要是 监控，涉及到 prometheus alertmanager grafana k8s 等相关组件的安装使用与监控配置等.</p>
+<p><strong>目录</strong></p>
+<p><a href="cloud_operations/monitor/n9e_install.html">1. 夜莺部署安装</a></p>
+<p><a href="cloud_operations/monitor/n9e_ldap_config.html">2. 夜莺配置 ldap 单点登录</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="夜莺安装与配置"><a class="header" href="#夜莺安装与配置">夜莺安装与配置</a></h1>
 <p><a href="https://flashcat.cloud/docs/content/flashcat-monitor/nightingale-v6/install/intro/">夜莺官方部署文档</a></p>
 <p>夜莺官方推荐二进制安装，具体安装步骤参考与官网</p>
@@ -727,6 +788,31 @@ wget -q $urlpath || exit 1
 </code></pre>
 <p>启动成功如下图
 <img src="cloud_operations/monitor/../../images/n9e/n9e_check_17000.png" alt="avatar" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="夜莺配置-ldap-单点登录"><a class="header" href="#夜莺配置-ldap-单点登录">夜莺配置 ldap 单点登录</a></h1>
+<p>夜莺版本 v6.1.0</p>
+<p>进入夜莺界面后，在系统配置中，找到单点登录，如下图</p>
+<p><img src="cloud_operations/monitor/../../images/n9e/n9e_ldap_config_1.png" alt="avatar" /></p>
+<p>选择<code>ldap</code>后，进行相应的修改即可</p>
+<p>参考配置如下</p>
+<pre><code class="language-conf">Enable = true # 开启
+Host = 'ldap_host'
+Port = 389
+BaseDn = 'dc=n9e,dc=com,dc=cn' # ldap相关配置 仅供参考
+BindUser = 'cn=Manager,dc=n9e,dc=com,dc=cn' # ldap 相关配置，仅供参考
+BindPass = 'passw0rd'
+# openldap format e.g. (&amp;(uid=%s))
+# AD format e.g. (&amp;(sAMAccountName=%s))
+AuthFilter = '(&amp;(uid=%s))'
+CoverAttributes = true
+TLS = false
+StartTLS = true
+DefaultRoles = ['Standard']
+
+[Attributes]
+Nickname = 'cn'
+Phone = 'mobile'
+Email = 'mail'
+</code></pre>
 
                     </main>
 

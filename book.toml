@@ -34,7 +34,7 @@ additional-js = ["language.js"]
 enable = true
 
 [output.html.fold]
-enable = false
+enable = true
 level = 0
 
 [output.html.playground]
