@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_kernel_upgrade.html"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_supervisor_install.html"><strong aria-hidden="true">2.1.3.</strong> supervisord 安装配置</a></li></ol></li><li class="chapter-item expanded "><a href="operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/docker/linux_docker_installed.html"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item expanded "><a href="operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li></ol></li><li class="chapter-item expanded "><a href="operations/redis.html"><strong aria-hidden="true">2.3.</strong> redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/redis/redis_binary_installed.html"><strong aria-hidden="true">2.3.1.</strong> redis 二进制安装与配置</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/monitor.html"><strong aria-hidden="true">3.1.</strong> 监控</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/monitor/n9e_install.html"><strong aria-hidden="true">3.1.1.</strong> 夜莺监控安装配置</a></li><li class="chapter-item expanded "><a href="cloud_operations/monitor/n9e_ldap_config.html"><strong aria-hidden="true">3.1.2.</strong> 夜莺配置 ldap 单点登录</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_kernel_upgrade.html"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_supervisor_install.html"><strong aria-hidden="true">2.1.3.</strong> supervisord 安装配置</a></li></ol></li><li class="chapter-item expanded "><a href="operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/docker/linux_docker_installed.html"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item expanded "><a href="operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li></ol></li><li class="chapter-item expanded "><a href="operations/redis.html"><strong aria-hidden="true">2.3.</strong> redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/redis/redis_binary_installed.html"><strong aria-hidden="true">2.3.1.</strong> redis 二进制安装与配置</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/monitor.html"><strong aria-hidden="true">3.1.</strong> 监控</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/monitor/n9e_install.html"><strong aria-hidden="true">3.1.1.</strong> 夜莺监控安装配置</a></li><li class="chapter-item expanded "><a href="cloud_operations/monitor/n9e_ldap_config.html"><strong aria-hidden="true">3.1.2.</strong> 夜莺配置 ldap 单点登录</a></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations/kubernetes.html"><strong aria-hidden="true">3.2.</strong> kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/kubernetes/kubernetes_sa.html"><strong aria-hidden="true">3.2.1.</strong> kubernetes service account</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/kubernetes/kubernetes_sa/k8s_sa_kubeconfig.html"><strong aria-hidden="true">3.2.1.1.</strong> k8s 基于 sa 创建 kubeconfig 访问(集群版)</a></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations/kubernetes/kubernetes_issues.html"><strong aria-hidden="true">3.2.2.</strong> k8s 相关问题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/kubernetes/kubernetes_issues/k8s_secret_issues.html"><strong aria-hidden="true">3.2.2.1.</strong> kubernetes secret 相关问题</a></li></ol></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -176,11 +176,30 @@
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="基础运维"><a class="header" href="#基础运维">基础运维</a></h1>
 <p>这里主要是基础运维，涉及到基础环境搭建以及配置.</p>
+<ul>
+<li>
+<p><a href="operations/linux.html">linux</a></p>
+</li>
+<li>
+<p><a href="operations/docker.html">docker</a></p>
+</li>
+<li>
+<p><a href="operations/redis.html">redis</a></p>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="linux-基础运维"><a class="header" href="#linux-基础运维">linux 基础运维</a></h1>
 <p>这里主要是 linux 基础运维，涉及到 linux 基础环境搭建以及配置和相关问题的处理.</p>
-<p><strong>目录</strong></p>
-<p><a href="operations/linux/linux_base_config.html">1. linux 基础配置</a></p>
-<p><a href="operations/linux/linux_kernel_upgrade.html">2. linux 内核升级</a></p>
+<ul>
+<li>
+<p><a href="operations/linux/linux_base_config.html">linux 基础配置</a></p>
+</li>
+<li>
+<p><a href="operations/linux/linux_kernel_upgrade.html">linux 内核升级</a></p>
+</li>
+<li>
+<p><a href="operations/linux/linux_supervisor_install.html">supervisord 安装配置</a></p>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="linux-基础配置"><a class="header" href="#linux-基础配置">linux 基础配置</a></h1>
 <h2 id="一务器系统配置初始化脚本"><a class="header" href="#一务器系统配置初始化脚本">一、务器系统配置初始化脚本</a></h2>
 <p>当拿到一台 linux 服务器，需要对 linux 做一些操作，来保证后续部署的服务能够高效稳定的运行。</p>
@@ -451,9 +470,14 @@ systemctl status supervisord
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="docker-基础运维"><a class="header" href="#docker-基础运维">docker 基础运维</a></h1>
 <p>这里主要是 docker 基础运维，涉及到 docker 基础环境搭建以及配置和相关问题的处理.</p>
-<p><strong>目录</strong></p>
-<p><a href="operations/docker/linux_docker_installed.html">1. docker 安装与配置</a></p>
-<p><a href="operations/docker/linux_docker_compose_installed.html">2. linux docker-compose 安装</a></p>
+<ul>
+<li>
+<p><a href="operations/docker/linux_docker_installed.html">docker 安装与配置</a></p>
+</li>
+<li>
+<p><a href="operations/docker/linux_docker_compose_installed.html">linux docker-compose 安装</a></p>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="linux-docker-安装与配置"><a class="header" href="#linux-docker-安装与配置">linux docker 安装与配置</a></h1>
 <h2 id="一docker-离线安装"><a class="header" href="#一docker-离线安装">一、docker 离线安装</a></h2>
 <h3 id="11下载离线安装包"><a class="header" href="#11下载离线安装包">1.1、下载离线安装包</a></h3>
@@ -653,8 +677,9 @@ wget https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-
 <p><img src="operations/docker/../../images/operations/docker/docker-compose-version.png" alt="avatar" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="redis-基础运维"><a class="header" href="#redis-基础运维">redis 基础运维</a></h1>
 <p>这里主要是 redis 基础运维，涉及到 redis 基础环境搭建以及配置和相关问题的处理.</p>
-<p><strong>目录</strong></p>
-<p>[1. redis 二进制安装与配置]</p>
+<ul>
+<li><a href="operations/redis/redis_binary_installed.html">redis 二进制安装与配置</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="redis-二进制安装与配置"><a class="header" href="#redis-二进制安装与配置">redis 二进制安装与配置</a></h1>
 <blockquote>
 <p>redis 各版本<a href="http://download.redis.io/releases/">下载地址</a></p>
@@ -733,11 +758,20 @@ systemctl start redis
 <p><img src="operations/redis/../../images/operations/redis/redis_status.png" alt="avatar" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="云原生"><a class="header" href="#云原生">云原生</a></h1>
 <p>这里主要是云原生运维，涉及到 docker,k8s,prometheus 监控等一系列云原生相关组件的安装配置与使用问题.</p>
+<ul>
+<li><a href="cloud_operations/monitor.html">监控</a></li>
+<li><a href="cloud_operations/kubernetes.html">kubernets</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="云原生监控"><a class="header" href="#云原生监控">云原生监控</a></h1>
-<p>这里主要是 监控，涉及到 prometheus alertmanager grafana k8s 等相关组件的安装使用与监控配置等.</p>
-<p><strong>目录</strong></p>
-<p><a href="cloud_operations/monitor/n9e_install.html">1. 夜莺部署安装</a></p>
-<p><a href="cloud_operations/monitor/n9e_ldap_config.html">2. 夜莺配置 ldap 单点登录</a></p>
+<p>这里主要是 监控，涉及到 prometheus alertmanager grafana 等相关组件的安装使用与监控配置等.</p>
+<ul>
+<li>
+<p><a href="cloud_operations/monitor/n9e_install.html">夜莺部署安装</a></p>
+</li>
+<li>
+<p><a href="cloud_operations/monitor/n9e_ldap_config.html">夜莺配置 ldap 单点登录</a></p>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="夜莺安装与配置"><a class="header" href="#夜莺安装与配置">夜莺安装与配置</a></h1>
 <p><a href="https://flashcat.cloud/docs/content/flashcat-monitor/nightingale-v6/install/intro/">夜莺官方部署文档</a></p>
 <p>夜莺官方推荐二进制安装，具体安装步骤参考与官网</p>
@@ -812,6 +846,133 @@ DefaultRoles = ['Standard']
 Nickname = 'cn'
 Phone = 'mobile'
 Email = 'mail'
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="云原生-kubernetes"><a class="header" href="#云原生-kubernetes">云原生 kubernetes</a></h1>
+<p>这里主要涉及到<code>kubernetes</code>相关知识已经运维相关的问题!</p>
+<ul>
+<li><a href="cloud_operations/kubernetes/kubernetes_sa.html">kubernetes sa 相关问题</a></li>
+<li><a href="cloud_operations/kubernetes/kubernetes_issues.html">kubernetes 相关问题</a>
+<ul>
+<li><a href="cloud_operations/kubernetes/kubernetes_issues/k8s_secret_issues.html">kubernetes secret 相关问题</a></li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="k8s-sa-相关问题"><a class="header" href="#k8s-sa-相关问题">k8s sa 相关问题</a></h1>
+<p>这里主要是记录对 k8s sa 的配置以及其相关运维的问题</p>
+<ul>
+<li><a href="cloud_operations/kubernetes/kubernetes_sa/k8s_sa_kubeconfig.html">k8s 基于 sa 创建 kubeconfig 访问(集群版)</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="k8s-基于-sa-创建-kubeconfig-访问集群版"><a class="header" href="#k8s-基于-sa-创建-kubeconfig-访问集群版">k8s 基于 sa 创建 kubeconfig 访问（集群版）</a></h1>
+<h2 id="1创建-sa"><a class="header" href="#1创建-sa">1、创建 sa</a></h2>
+<p>执行以下命令创建 serviceaccount</p>
+<pre><code class="language-shell">kubectl create sa devops
+</code></pre>
+<h2 id="2创建-clusterrole"><a class="header" href="#2创建-clusterrole">2、创建 clusterrole</a></h2>
+<p><code>clusterrole.yaml</code></p>
+<pre><code class="language-yaml">apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: '2022-12-11T07:37:26Z'
+  name: devops
+  resourceVersion: '2468820'
+  selfLink: /apis/rbac.authorization.k8s.io/v1/clusterroles/devops
+  uid: 21ba0efa-bca7-4a39-868f-f48858ddb591
+rules:
+  - apiGroups:
+      - '*'
+    resources:
+      - '*'
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - delete
+      - update
+      - patch
+</code></pre>
+<h2 id="3创建-clusterrolebinding"><a class="header" href="#3创建-clusterrolebinding">3、创建 clusterrolebinding</a></h2>
+<p><code>clusterrolebinding.yaml</code></p>
+<pre><code class="language-yaml">apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: devops
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: devops
+subjects:
+  - kind: ServiceAccount
+    name: devops
+    namespace: default
+</code></pre>
+<h2 id="4生成-kubeconfig"><a class="header" href="#4生成-kubeconfig">4、生成 kubeconfig</a></h2>
+<p>假设 k8s 的 apiserver 地址为：<strong><a href="https://192.168.1.236:16443">https://192.168.1.236:16443</a></strong></p>
+<p>假设 k8s 集群的 ca 证书文件目录为：<strong>/etc/kubernetes/pki/ca.pem</strong></p>
+<h3 id="41-获取-sa-token"><a class="header" href="#41-获取-sa-token">4.1 获取 sa token</a></h3>
+<pre><code class="language-shell">kubectl get secret $(kubectl get secret -A | grep devops | awk '{print $2}') -o=jsonpath='{.data.token}' | base64 -d
+</code></pre>
+<h3 id="42-生成-kubeconfig-步骤"><a class="header" href="#42-生成-kubeconfig-步骤">4.2 生成 kubeconfig 步骤</a></h3>
+<pre><code class="language-shell">KUBE_APISERVER=https://192.168.1.236:16443
+DEVOPS_TOKEN=`kubectl get secret $(kubectl get secret -A | grep devops | awk '{print $2}') -o=jsonpath='{.data.token}' | base64 -d` # 这里为上一步获取token的命令
+
+# 设置集群信息
+kubectl config set-cluster kubernetes \ # kubernetes是集群名字
+--certificate-authority=/etc/kubernetes/pki/ca.pem \ # 这个ca是k8s集群的ca证书
+--embed-certs=true \
+--server=${KUBE_APISERVER} \ # 这个是api-server的连接地址，通过kubectl cluster-info能看到
+--kubeconfig=devops.kubeconfig
+
+# 设置客户端认证凭据
+kubectl config set-credentials devops-user \ # devops-user表示凭据的用户名
+--token=${DEVOPS_TOKEN} \ # token可通过第一个步骤中得到
+--kubeconfig=devops.kubeconfig
+
+# 设置集群信息和用户的上下文信息
+kubectl config set-context devops@kubernetes \ # 设置上下文名字
+--cluster=kubernetes \ # kubernetes集群名字，跟设置集群信息中保持一致
+--user=devops-user \ # 第二步设置凭据的用户名
+--kubeconfig=devops.kubeconfig
+
+# 切换当前上下文
+kubectl config use-context devops@kubernetes \
+--kubeconfig=./devops.kubeconfig
+</code></pre>
+<h2 id="5命令测试"><a class="header" href="#5命令测试">5、命令测试</a></h2>
+<pre><code class="language-shell">kubectl --kubeconfig=./devops.kubeconfig get pod -A
+</code></pre>
+<h2 id="6使用"><a class="header" href="#6使用">6、使用</a></h2>
+<p>将生成的<code>devops.config</code>放到 用户家目录下的<code>.kube</code>文件下，并重命名为<code>config</code>即可，例如</p>
+<pre><code class="language-shell">mkdir ~/.kube
+
+mv devops.config ~/.kube/config
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="k8s-相关问题"><a class="header" href="#k8s-相关问题">k8s 相关问题</a></h1>
+<p>这里主要是记录对 k8s 版本之间的配置以及其相关运维的问题</p>
+<p><a href="cloud_operations/kubernetes/kubernetes_issues/k8s_secret_issues.html">kubernetes secret 相关问题</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="k8s-新版本问题处理"><a class="header" href="#k8s-新版本问题处理">k8s 新版本问题处理</a></h1>
+<h4 id="1创建-sa-不会自动生成相应-secret-问题"><a class="header" href="#1创建-sa-不会自动生成相应-secret-问题">1、创建 sa 不会自动生成相应 secret 问题</a></h4>
+<blockquote>
+<p>k8s serviceaccount 创建后没有生成对应的 secret</p>
+</blockquote>
+<p>👉🏻<a href="https://www.soulchild.cn/post/2945">参考文章: k8s serviceaccount 创建后没有生成对应的 secret</a></p>
+<p>👉🏻<a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md#urgent-upgrade-notes">changelog 在这里</a></p>
+<p>👉🏻<a href="https://github.com/kubernetes/kubernetes/pull/108309">相关 pr</a></p>
+<p>方法如下</p>
+<p>方式 1 使用 TokenRequest API 来生成 token，获取方式如下</p>
+<ul>
+<li>使用 client-go 或者其他 api 调用工具来获取某个 serviceaccount 的 token</li>
+<li>创建 yaml，使用 kubectl apply -f</li>
+<li>使用 kubectl create token -n xxx <serviceaccount-name> 来获取一个临时的 token, 默认 1 小时</li>
+</ul>
+<p>方式 2 创建 secret token，创建后从 secret 的 token 字段拿就可以了</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-sa-sample
+  annotations:
+    kubernetes.io/service-account.name: 'sa-name' # 这里填写serviceAccountName
+type: kubernetes.io/service-account-token
 </code></pre>
 
                     </main>
