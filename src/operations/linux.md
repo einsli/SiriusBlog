@@ -4,6 +4,8 @@
 
 - [linux 基础配置](linux/linux_base_config.md)
 
-- [linux 内核升级](linux/linux_kernel_upgrade.md)
+- [linux 内核升级(线上)](linux/linux_kernel_upgrade_online.md)
+
+- [linux 内核升级(离线)](linux/linux_kernel_upgrade_offline.md)
 
 - [supervisord 安装配置](linux/linux_supervisor_install.md)

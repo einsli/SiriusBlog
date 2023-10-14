@@ -6,7 +6,8 @@
 
   - [linux](operations/linux.md)
     - [linux 基础配置](operations/linux/linux_base_config.md)
-    - [linux 内核升级](operations/linux/linux_kernel_upgrade.md)
+    - [linux 内核升级(线上)](operations/linux/linux_kernel_upgrade_online.md)
+    - [linux 内核升级(离线)](operations/linux/linux_kernel_upgrade_offline.md)
     - [supervisord 安装配置](operations/linux/linux_supervisor_install.md)
   - [docker](operations/docker.md)
     - [docker 安装与配置](operations/docker/linux_docker_installed.md)
@@ -21,6 +22,6 @@
     - [prometheus 监控告警 sql](cloud_operations/monitor/alert_prom_sql.md)
   - [kubernetes](cloud_operations/kubernetes.md)
     - [kubernetes service account](cloud_operations/kubernetes/kubernetes_sa.md)
-      - [k8s 基于 sa 创建 kubeconfig 访问(集群版)](cloud_operations/kubernetes/kubernetes_sa/k8s_sa_kubeconfig.md)
+      - [kubernetees 基于 sa 创建 kubeconfig 访问(集群版)](cloud_operations/kubernetes/kubernetes_sa/k8s_sa_kubeconfig.md)
     - [k8s 相关问题](cloud_operations/kubernetes/kubernetes_issues.md)
       - [kubernetes secret 相关问题](cloud_operations/kubernetes/kubernetes_issues/k8s_secret_issues.md)
