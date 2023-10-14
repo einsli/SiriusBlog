@@ -5,3 +5,4 @@
 - [夜莺部署安装](monitor/n9e_install.md)
 
 - [夜莺配置 ldap 单点登录](monitor/n9e_ldap_config.md)
+- [prometheus 监控 sql](monitor/alert_prom_sql.md)
