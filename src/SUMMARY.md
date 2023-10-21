@@ -20,6 +20,7 @@
     - [夜莺监控安装配置](cloud_operations/monitor/n9e_install.md)
     - [夜莺配置 ldap 单点登录](cloud_operations/monitor/n9e_ldap_config.md)
     - [prometheus 监控告警 sql](cloud_operations/monitor/alert_prom_sql.md)
+    - [prometheus 监控域名](cloud_operations/monitor/prometheus_domain_monitor.md)
   - [kubernetes](cloud_operations/kubernetes.md)
     - [kubernetes service account](cloud_operations/kubernetes/kubernetes_sa.md)
       - [kubernetees 基于 sa 创建 kubeconfig 访问(集群版)](cloud_operations/kubernetes/kubernetes_sa/k8s_sa_kubeconfig.md)

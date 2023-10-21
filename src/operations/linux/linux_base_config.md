@@ -138,4 +138,4 @@ mv /etc/localtime /etc/localtime.bak
 
 #### 参考文档
 
-[1.Linux 使用 ssh 超时断开连接的真正原因](http://bluebiu.com/blog/linux-ssh-session-alive.html)
+- [Linux 使用 ssh 超时断开连接的真正原因](http://bluebiu.com/blog/linux-ssh-session-alive.html)

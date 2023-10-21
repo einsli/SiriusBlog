@@ -6,3 +6,4 @@
 
 - [夜莺配置 ldap 单点登录](monitor/n9e_ldap_config.md)
 - [prometheus 监控 sql](monitor/alert_prom_sql.md)
+- [prometheus 监控域名](monitor/prometheus_domain_monitor.md)
