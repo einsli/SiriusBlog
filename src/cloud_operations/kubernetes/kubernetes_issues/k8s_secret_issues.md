@@ -4,12 +4,6 @@
 
 > k8s serviceaccount 创建后没有生成对应的 secret
 
-👉🏻[参考文章: k8s serviceaccount 创建后没有生成对应的 secret](https://www.soulchild.cn/post/2945)
-
-👉🏻[changelog 在这里](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md#urgent-upgrade-notes)
-
-👉🏻[相关 pr](https://github.com/kubernetes/kubernetes/pull/108309)
-
 方法如下
 
 方式 1 使用 TokenRequest API 来生成 token，获取方式如下
@@ -29,3 +23,9 @@ metadata:
     kubernetes.io/service-account.name: 'sa-name' # 这里填写serviceAccountName
 type: kubernetes.io/service-account-token
 ```
+
+### 参考文章
+
+- [参考文章: k8s serviceaccount 创建后没有生成对应的 secret](https://www.soulchild.cn/post/2945)
+- [changelog](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md#urgent-upgrade-notes)
+- [相关 pr](https://github.com/kubernetes/kubernetes/pull/108309)
