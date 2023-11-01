@@ -8,6 +8,6 @@ python 项目打包，docker 基础镜像用的是`python:3.8`,然后构建报�
 
 **RuntimeError: can't start new thread**
 
-**解决方法**
+✅ **解决方法**
 
-基础镜像问题，将镜像由`python:3.8` 换成`python3.6`即可，前提是对`python`要求版本不高，如果对版本要求过高，需要自己单独做镜像
+> 基础镜像问题，将镜像由`python:3.8` 换成`python3.6`即可，前提是对`python`要求版本不高，如果对版本要求过高，需要自己单独做镜像

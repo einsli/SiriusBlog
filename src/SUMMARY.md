@@ -16,7 +16,9 @@
   - [redis](operations/redis.md)
     - [redis 二进制安装与配置](operations/redis/redis_binary_installed.md)
   - [git](operations/git.md)
-    - [Git 版本控制](operations/git/git_operation.md)
+    - [git 版本控制](operations/git/git_operation.md)
+    - [git http 方式免密克隆代码](operations/git/git_clone_without_pass.md)
+    - [git 开发管理规范](operations/git/git_dev_specification.md)
 
 - [云原生](cloud_operations.md)
   - [监控](cloud_operations/monitor.md)
