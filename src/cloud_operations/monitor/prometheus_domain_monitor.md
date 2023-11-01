@@ -8,7 +8,7 @@
 
 👉🏻 blackbox [下载地址](https://github.com/prometheus/blackbox_exporter/releases)
 
-执行一下命令，下载并`blackbox`
+执行以下命令，下载并安装`blackbox`
 
 ```shell
 # 下载二进制文件
@@ -253,10 +253,24 @@ service-http
 
 ## 三、prom sql
 
-配置`prometheus`监控告警，检查状态码非 200
+配置`prometheus`监控告警，检查状态码非`200`
 
 ```sql
 probe_http_status_code != 200
+```
+
+如果除了`200`还有其他状态码，如`301`、`424` 等，可以用如下`sql`
+
+```sql
+probe_http_status_code != 200 unless probe_http_status_code == 424
+```
+
+此`prom sql`表示，查找状态码非`200`或者非`424`的数据
+
+另外一种查询方式是，查询 10 分钟之内，状态码有变化的数据
+
+```sql
+changes(probe_http_status_code[10m])
 ```
 
 #### 参考文档

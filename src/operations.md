@@ -7,3 +7,5 @@
 - [docker](operations/docker.md)
 
 - [redis](operations/redis.md)
+
+- [git](operations/git.md)

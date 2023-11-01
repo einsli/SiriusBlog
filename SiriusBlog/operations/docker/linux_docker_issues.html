@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>夜莺配置 ldap 单点登录 - Sirius运维开发笔记</title>
+        <title>docker 相关问题 - Sirius运维开发笔记</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="../../operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_kernel_upgrade_online.html"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级(线上)</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_kernel_upgrade_offline.html"><strong aria-hidden="true">2.1.3.</strong> linux 内核升级(离线)</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_supervisor_install.html"><strong aria-hidden="true">2.1.4.</strong> supervisord 安装配置</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_installed.html"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_issues.html"><strong aria-hidden="true">2.2.3.</strong> docker 相关问题</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/redis.html"><strong aria-hidden="true">2.3.</strong> redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/redis/redis_binary_installed.html"><strong aria-hidden="true">2.3.1.</strong> redis 二进制安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/git.html"><strong aria-hidden="true">2.4.</strong> git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/git/git_operation.html"><strong aria-hidden="true">2.4.1.</strong> Git 版本控制</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/monitor.html"><strong aria-hidden="true">3.1.</strong> 监控</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/n9e_install.html"><strong aria-hidden="true">3.1.1.</strong> 夜莺监控安装配置</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/n9e_ldap_config.html" class="active"><strong aria-hidden="true">3.1.2.</strong> 夜莺配置 ldap 单点登录</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/alert_prom_sql.html"><strong aria-hidden="true">3.1.3.</strong> prometheus 监控告警 sql</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/prometheus_domain_monitor.html"><strong aria-hidden="true">3.1.4.</strong> prometheus 监控域名</a></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes.html"><strong aria-hidden="true">3.2.</strong> kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_sa.html"><strong aria-hidden="true">3.2.1.</strong> kubernetes service account</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_sa/k8s_sa_kubeconfig.html"><strong aria-hidden="true">3.2.1.1.</strong> kubernetees 基于 sa 创建 kubeconfig 访问(集群版)</a></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_issues.html"><strong aria-hidden="true">3.2.2.</strong> k8s 相关问题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_issues/k8s_secret_issues.html"><strong aria-hidden="true">3.2.2.1.</strong> kubernetes secret 相关问题</a></li></ol></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="../../operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_kernel_upgrade_online.html"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级(线上)</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_kernel_upgrade_offline.html"><strong aria-hidden="true">2.1.3.</strong> linux 内核升级(离线)</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_supervisor_install.html"><strong aria-hidden="true">2.1.4.</strong> supervisord 安装配置</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_installed.html"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_issues.html" class="active"><strong aria-hidden="true">2.2.3.</strong> docker 相关问题</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/redis.html"><strong aria-hidden="true">2.3.</strong> redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/redis/redis_binary_installed.html"><strong aria-hidden="true">2.3.1.</strong> redis 二进制安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/git.html"><strong aria-hidden="true">2.4.</strong> git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/git/git_operation.html"><strong aria-hidden="true">2.4.1.</strong> Git 版本控制</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/monitor.html"><strong aria-hidden="true">3.1.</strong> 监控</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/n9e_install.html"><strong aria-hidden="true">3.1.1.</strong> 夜莺监控安装配置</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/n9e_ldap_config.html"><strong aria-hidden="true">3.1.2.</strong> 夜莺配置 ldap 单点登录</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/alert_prom_sql.html"><strong aria-hidden="true">3.1.3.</strong> prometheus 监控告警 sql</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/prometheus_domain_monitor.html"><strong aria-hidden="true">3.1.4.</strong> prometheus 监控域名</a></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes.html"><strong aria-hidden="true">3.2.</strong> kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_sa.html"><strong aria-hidden="true">3.2.1.</strong> kubernetes service account</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_sa/k8s_sa_kubeconfig.html"><strong aria-hidden="true">3.2.1.1.</strong> kubernetees 基于 sa 创建 kubeconfig 访问(集群版)</a></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_issues.html"><strong aria-hidden="true">3.2.2.</strong> k8s 相关问题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_issues/k8s_secret_issues.html"><strong aria-hidden="true">3.2.2.1.</strong> kubernetes secret 相关问题</a></li></ol></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -143,7 +143,7 @@
                         <a href="https://github.com/einsli/SiriusBlog" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/einsli/SiriusBlog/edit/main/src/cloud_operations/monitor/n9e_ldap_config.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/einsli/SiriusBlog/edit/main/src/operations/docker/linux_docker_issues.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -172,41 +172,23 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="夜莺配置-ldap-单点登录"><a class="header" href="#夜莺配置-ldap-单点登录">夜莺配置 ldap 单点登录</a></h1>
-<p>夜莺版本 v6.1.0</p>
-<p>进入夜莺界面后，在系统配置中，找到单点登录，如下图</p>
-<p><img src="../../images/n9e/n9e_ldap_config_1.png" alt="avatar" /></p>
-<p>选择<code>ldap</code>后，进行相应的修改即可</p>
-<p>参考配置如下</p>
-<pre><code class="language-conf">Enable = true # 开启
-Host = 'ldap_host'
-Port = 389
-BaseDn = 'dc=n9e,dc=com,dc=cn' # ldap相关配置 仅供参考
-BindUser = 'cn=Manager,dc=n9e,dc=com,dc=cn' # ldap 相关配置，仅供参考
-BindPass = 'passw0rd'
-# openldap format e.g. (&amp;(uid=%s))
-# AD format e.g. (&amp;(sAMAccountName=%s))
-AuthFilter = '(&amp;(uid=%s))'
-CoverAttributes = true
-TLS = false
-StartTLS = true
-DefaultRoles = ['Standard']
-
-[Attributes]
-Nickname = 'cn'
-Phone = 'mobile'
-Email = 'mail'
-</code></pre>
+                        <h1 id="这里主要记录-docker-使用过程中遇到的问题以及解决办法"><a class="header" href="#这里主要记录-docker-使用过程中遇到的问题以及解决办法">这里主要记录 docker 使用过程中遇到的问题以及解决办法</a></h1>
+<h2 id="1pip-install-upgrade-pip-报错-runtimeerror-cant-start-new-thread"><a class="header" href="#1pip-install-upgrade-pip-报错-runtimeerror-cant-start-new-thread">1、pip install –upgrade pip 报错 RuntimeError: can’t start new thread</a></h2>
+<p><strong>问题描述</strong></p>
+<p>python 项目打包，docker 基础镜像用的是<code>python:3.8</code>,然后构建报错如下</p>
+<p><strong>RuntimeError: can’t start new thread</strong></p>
+<p><strong>解决方法</strong></p>
+<p>基础镜像问题，将镜像由<code>python:3.8</code> 换成<code>python3.6</code>即可，前提是对<code>python</code>要求版本不高，如果对版本要求过高，需要自己单独做镜像</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../cloud_operations/monitor/n9e_install.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../operations/docker/linux_docker_compose_installed.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../../cloud_operations/monitor/alert_prom_sql.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../operations/redis.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -216,11 +198,11 @@ Email = 'mail'
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../cloud_operations/monitor/n9e_install.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../operations/docker/linux_docker_compose_installed.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../../cloud_operations/monitor/alert_prom_sql.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../operations/redis.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

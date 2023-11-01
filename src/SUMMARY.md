@@ -12,8 +12,11 @@
   - [docker](operations/docker.md)
     - [docker 安装与配置](operations/docker/linux_docker_installed.md)
     - [docker-compose 安装](operations/docker/linux_docker_compose_installed.md)
+    - [docker 相关问题](operations/docker/linux_docker_issues.md)
   - [redis](operations/redis.md)
     - [redis 二进制安装与配置](operations/redis/redis_binary_installed.md)
+  - [git](operations/git.md)
+    - [Git 版本控制](operations/git/git_operation.md)
 
 - [云原生](cloud_operations.md)
   - [监控](cloud_operations/monitor.md)
