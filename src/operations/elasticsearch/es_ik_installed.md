@@ -1,13 +1,14 @@
 # elasticsearch ik 分词器安装(7.10.0 版本)
 
 👉🏻 [elasticsearch ik 分词器 github](https://github.com/medcl/elasticsearch-analysis-ik)
-👉🏻 [elasticsearch ik 分词器 7.1.0 下载地址](https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.10.0/elasticsearch-analysis-ik-7.10.0.zip)
+
+👉🏻 [elasticsearch ik 分词器 7.10.0 下载地址](https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.10.0/elasticsearch-analysis-ik-7.10.0.zip)
 
 ## 前期准备
 
 `elasticserach` 已经安装部署完成
 
-安装部署请参考 👉🏻 [elasticsearch docker-compose 安装与配置(7.1.0 版本)](es_docker_installed.md)
+安装部署请参考 👉🏻 [elasticsearch docker-compose 安装与配置(7.10.0 版本)](es_docker_installed.md)
 
 **1、停止服务**
 

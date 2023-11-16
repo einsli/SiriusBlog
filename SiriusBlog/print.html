@@ -904,6 +904,7 @@ systemctl start redis
 <p>如果有如下输出就无需创建</p>
 <pre><code class="language-PlainText">514e3dd06943   ops_network   bridge    local
 </code></pre>
+<p>如果没有<code>ops_network</code>,执行以下命令创建即可</p>
 <pre><code class="language-shell">docker network create ops_network
 </code></pre>
 <p><strong>2、部署文件准备</strong></p>
@@ -1061,6 +1062,7 @@ rdb-save-incremental-fsync yes
 <p>如果有如下输出就无需创建</p>
 <pre><code class="language-PlainText">514e3dd06943   ops_network   bridge    local
 </code></pre>
+<p>如果没有<code>ops_network</code>,执行以下命令创建即可</p>
 <pre><code class="language-shell">docker network create ops_network
 </code></pre>
 <p><strong>2、部署文件准备</strong></p>
@@ -1255,6 +1257,7 @@ chmod +x /data/elasticsearch/stop.sh
 docker cp elasticsearch:/usr/share/elasticsearch/config es_config
 # 拷贝 kibana config文件
 docker cp kibana:/usr/share/kibana/config kibana_config
+# 修改文件权限
 chown -R 1000:1000 es_config kibana_config
 </code></pre>
 <p>关闭服务</p>
@@ -1274,7 +1277,7 @@ services:
       LANG: en_US.UTF-8
       discovery.type: single-node
       ES_JAVA_OPTS: '-Xmx512m -Xms512m'
-      ELASTIC_PASSWORD: 'N8pLVxb7p'
+      ELASTIC_PASSWORD: 'Passw0rd'
     volumes:
       - /etc/localtime:/etc/localtime
       - ./es_config:/usr/share/elasticsearch/config # 新增
@@ -1368,11 +1371,11 @@ elasticsearch.password: '123456' # es密码
 <p>如下图
 <img src="operations/elasticsearch/../../images/operations/elasticsearch/es_update_password_3.png" alt="avatar" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="elasticsearch-ik-分词器安装7100-版本"><a class="header" href="#elasticsearch-ik-分词器安装7100-版本">elasticsearch ik 分词器安装(7.10.0 版本)</a></h1>
-<p>👉🏻 <a href="https://github.com/medcl/elasticsearch-analysis-ik">elasticsearch ik 分词器 github</a>
-👉🏻 <a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.10.0/elasticsearch-analysis-ik-7.10.0.zip">elasticsearch ik 分词器 7.1.0 下载地址</a></p>
+<p>👉🏻 <a href="https://github.com/medcl/elasticsearch-analysis-ik">elasticsearch ik 分词器 github</a></p>
+<p>👉🏻 <a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.10.0/elasticsearch-analysis-ik-7.10.0.zip">elasticsearch ik 分词器 7.10.0 下载地址</a></p>
 <h2 id="前期准备-5"><a class="header" href="#前期准备-5">前期准备</a></h2>
 <p><code>elasticserach</code> 已经安装部署完成</p>
-<p>安装部署请参考 👉🏻 <a href="operations/elasticsearch/es_docker_installed.html">elasticsearch docker-compose 安装与配置(7.1.0 版本)</a></p>
+<p>安装部署请参考 👉🏻 <a href="operations/elasticsearch/es_docker_installed.html">elasticsearch docker-compose 安装与配置(7.10.0 版本)</a></p>
 <p><strong>1、停止服务</strong></p>
 <pre><code class="language-shell">cd /data/elasticserach/
 .stop.sh

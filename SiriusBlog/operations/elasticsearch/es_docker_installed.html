@@ -293,6 +293,7 @@ chmod +x /data/elasticsearch/stop.sh
 docker cp elasticsearch:/usr/share/elasticsearch/config es_config
 # 拷贝 kibana config文件
 docker cp kibana:/usr/share/kibana/config kibana_config
+# 修改文件权限
 chown -R 1000:1000 es_config kibana_config
 </code></pre>
 <p>关闭服务</p>
@@ -312,7 +313,7 @@ services:
       LANG: en_US.UTF-8
       discovery.type: single-node
       ES_JAVA_OPTS: '-Xmx512m -Xms512m'
-      ELASTIC_PASSWORD: 'N8pLVxb7p'
+      ELASTIC_PASSWORD: 'Passw0rd'
     volumes:
       - /etc/localtime:/etc/localtime
       - ./es_config:/usr/share/elasticsearch/config # 新增

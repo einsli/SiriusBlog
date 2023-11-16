@@ -28,6 +28,8 @@ docker network ls |grep ops_network
 514e3dd06943   ops_network   bridge    local
 ```
 
+如果没有`ops_network`,执行以下命令创建即可
+
 ```shell
 docker network create ops_network
 ```
