@@ -9,3 +9,7 @@
 - [redis](operations/redis.md)
 
 - [git](operations/git.md)
+
+- [mongodb](operations/mongodb.md)
+
+- [elasticsearch](operations/elasticsearch.md)
