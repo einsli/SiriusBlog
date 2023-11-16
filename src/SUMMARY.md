@@ -17,6 +17,8 @@
   - [redis](operations/redis.md)
     - [redis 二进制安装与配置](operations/redis/redis_binary_installed.md)
     - [redis docker-compose 安装与配置](operations/redis/redis_docker_installed.md)
+  - [mongodb](operations/mongodb.md)
+    - [mongodb docker-compose 安装与配置](operations/mongodb/mongodb_docker_installed.md)
   - [git](operations/git.md)
     - [git 版本控制](operations/git/git_operation.md)
     - [git http 方式免密克隆代码](operations/git/git_clone_without_pass.md)

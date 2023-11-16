@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>git http 方式免密克隆代码 - Sirius运维开发笔记</title>
+        <title>mongodb - Sirius运维开发笔记</title>
 
 
         <!-- Custom HTML head -->
@@ -12,21 +12,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="../../favicon.svg">
-        <link rel="shortcut icon" href="../../favicon.png">
-        <link rel="stylesheet" href="../../css/variables.css">
-        <link rel="stylesheet" href="../../css/general.css">
-        <link rel="stylesheet" href="../../css/chrome.css">
-        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css">
-        <link rel="stylesheet" href="../../tomorrow-night.css">
-        <link rel="stylesheet" href="../../ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,7 +35,7 @@
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "../../";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
         </script>
 
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="../../operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_kernel_upgrade_online.html"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级(线上)</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_kernel_upgrade_offline.html"><strong aria-hidden="true">2.1.3.</strong> linux 内核升级(离线)</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_supervisor_install.html"><strong aria-hidden="true">2.1.4.</strong> supervisord 安装配置</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_ops_issues.html"><strong aria-hidden="true">2.1.5.</strong> linux 运维问题排查</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_installed.html"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_issues.html"><strong aria-hidden="true">2.2.3.</strong> docker 相关问题</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/redis.html"><strong aria-hidden="true">2.3.</strong> redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/redis/redis_binary_installed.html"><strong aria-hidden="true">2.3.1.</strong> redis 二进制安装与配置</a></li><li class="chapter-item expanded "><a href="../../operations/redis/redis_docker_installed.html"><strong aria-hidden="true">2.3.2.</strong> redis docker-compose 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/mongodb.html"><strong aria-hidden="true">2.4.</strong> mongodb</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/mongodb/mongodb_docker_installed.html"><strong aria-hidden="true">2.4.1.</strong> mongodb docker-compose 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/git.html"><strong aria-hidden="true">2.5.</strong> git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/git/git_operation.html"><strong aria-hidden="true">2.5.1.</strong> git 版本控制</a></li><li class="chapter-item expanded "><a href="../../operations/git/git_clone_without_pass.html" class="active"><strong aria-hidden="true">2.5.2.</strong> git http 方式免密克隆代码</a></li><li class="chapter-item expanded "><a href="../../operations/git/git_dev_specification.html"><strong aria-hidden="true">2.5.3.</strong> git 开发管理规范</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/monitor.html"><strong aria-hidden="true">3.1.</strong> 监控</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/n9e_install.html"><strong aria-hidden="true">3.1.1.</strong> 夜莺监控安装配置</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/n9e_ldap_config.html"><strong aria-hidden="true">3.1.2.</strong> 夜莺配置 ldap 单点登录</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/alert_prom_sql.html"><strong aria-hidden="true">3.1.3.</strong> prometheus 监控告警 sql</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/prometheus_domain_monitor.html"><strong aria-hidden="true">3.1.4.</strong> prometheus 监控域名</a></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes.html"><strong aria-hidden="true">3.2.</strong> kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_sa.html"><strong aria-hidden="true">3.2.1.</strong> kubernetes service account</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_sa/k8s_sa_kubeconfig.html"><strong aria-hidden="true">3.2.1.1.</strong> kubernetees 基于 sa 创建 kubeconfig 访问(集群版)</a></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_issues.html"><strong aria-hidden="true">3.2.2.</strong> k8s 相关问题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_issues/k8s_secret_issues.html"><strong aria-hidden="true">3.2.2.1.</strong> kubernetes secret 相关问题</a></li></ol></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="../operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="../operations/linux/linux_kernel_upgrade_online.html"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级(线上)</a></li><li class="chapter-item expanded "><a href="../operations/linux/linux_kernel_upgrade_offline.html"><strong aria-hidden="true">2.1.3.</strong> linux 内核升级(离线)</a></li><li class="chapter-item expanded "><a href="../operations/linux/linux_supervisor_install.html"><strong aria-hidden="true">2.1.4.</strong> supervisord 安装配置</a></li><li class="chapter-item expanded "><a href="../operations/linux/linux_ops_issues.html"><strong aria-hidden="true">2.1.5.</strong> linux 运维问题排查</a></li></ol></li><li class="chapter-item expanded "><a href="../operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../operations/docker/linux_docker_installed.html"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item expanded "><a href="../operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li><li class="chapter-item expanded "><a href="../operations/docker/linux_docker_issues.html"><strong aria-hidden="true">2.2.3.</strong> docker 相关问题</a></li></ol></li><li class="chapter-item expanded "><a href="../operations/redis.html"><strong aria-hidden="true">2.3.</strong> redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../operations/redis/redis_binary_installed.html"><strong aria-hidden="true">2.3.1.</strong> redis 二进制安装与配置</a></li><li class="chapter-item expanded "><a href="../operations/redis/redis_docker_installed.html"><strong aria-hidden="true">2.3.2.</strong> redis docker-compose 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="../operations/mongodb.html" class="active"><strong aria-hidden="true">2.4.</strong> mongodb</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../operations/mongodb/mongodb_docker_installed.html"><strong aria-hidden="true">2.4.1.</strong> mongodb docker-compose 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="../operations/git.html"><strong aria-hidden="true">2.5.</strong> git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../operations/git/git_operation.html"><strong aria-hidden="true">2.5.1.</strong> git 版本控制</a></li><li class="chapter-item expanded "><a href="../operations/git/git_clone_without_pass.html"><strong aria-hidden="true">2.5.2.</strong> git http 方式免密克隆代码</a></li><li class="chapter-item expanded "><a href="../operations/git/git_dev_specification.html"><strong aria-hidden="true">2.5.3.</strong> git 开发管理规范</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cloud_operations/monitor.html"><strong aria-hidden="true">3.1.</strong> 监控</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cloud_operations/monitor/n9e_install.html"><strong aria-hidden="true">3.1.1.</strong> 夜莺监控安装配置</a></li><li class="chapter-item expanded "><a href="../cloud_operations/monitor/n9e_ldap_config.html"><strong aria-hidden="true">3.1.2.</strong> 夜莺配置 ldap 单点登录</a></li><li class="chapter-item expanded "><a href="../cloud_operations/monitor/alert_prom_sql.html"><strong aria-hidden="true">3.1.3.</strong> prometheus 监控告警 sql</a></li><li class="chapter-item expanded "><a href="../cloud_operations/monitor/prometheus_domain_monitor.html"><strong aria-hidden="true">3.1.4.</strong> prometheus 监控域名</a></li></ol></li><li class="chapter-item expanded "><a href="../cloud_operations/kubernetes.html"><strong aria-hidden="true">3.2.</strong> kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cloud_operations/kubernetes/kubernetes_sa.html"><strong aria-hidden="true">3.2.1.</strong> kubernetes service account</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cloud_operations/kubernetes/kubernetes_sa/k8s_sa_kubeconfig.html"><strong aria-hidden="true">3.2.1.1.</strong> kubernetees 基于 sa 创建 kubeconfig 访问(集群版)</a></li></ol></li><li class="chapter-item expanded "><a href="../cloud_operations/kubernetes/kubernetes_issues.html"><strong aria-hidden="true">3.2.2.</strong> k8s 相关问题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cloud_operations/kubernetes/kubernetes_issues/k8s_secret_issues.html"><strong aria-hidden="true">3.2.2.1.</strong> kubernetes secret 相关问题</a></li></ol></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -137,13 +137,13 @@
                     <h1 class="menu-title">Sirius运维开发笔记</h1>
 
                     <div class="right-buttons">
-                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         <a href="https://github.com/einsli/SiriusBlog" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/einsli/SiriusBlog/edit/main/src/operations/git/git_clone_without_pass.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/einsli/SiriusBlog/edit/main/src/operations/mongodb.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -172,42 +172,21 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="git-http-方式免密克隆代码"><a class="header" href="#git-http-方式免密克隆代码">git http 方式免密克隆代码</a></h1>
-<p>免密拉取配置
-执行以下命令，在<code>home</code>目录下，创建<code>.git-credentials</code>文件 写入如下内容</p>
-<pre><code class="language-shell">cat &gt; $HOME/.git-credentials &lt;&lt; EOF
-https://username:password@git.gitxx.com
-EOF
-</code></pre>
-<p>其中 <code>username</code>替换为自己的用户名，<code>password</code>替换为登录的密码</p>
-<p>比如 <a href="https://einsli:passw0rd@git.einsli.com">https://einsli:passw0rd@git.einsli.com</a></p>
-<p>执行以下命令更新配置</p>
-<pre><code class="language-shell">git config --global credential.helper store
-</code></pre>
-<p>执行以下命令验证</p>
-<pre><code class="language-shell">git config --list
-</code></pre>
-<p>输出如下</p>
-<pre><code class="language-PlainText">credential.helper=store
-</code></pre>
-<p>或者查看一下<code>$HOME/.gitconfig</code> 文件</p>
-<pre><code class="language-shell">cat $HOME/.gitconfig
-</code></pre>
-<p>输出如下</p>
-<pre><code class="language-PlainText">[credential]
-	helper = store
-</code></pre>
-<p>这时候再用 git 拉取仓库就不需要输入用户名和密码了。</p>
+                        <h1 id="mongodb-基础运维"><a class="header" href="#mongodb-基础运维">mongodb 基础运维</a></h1>
+<p>这里主要是 mongodb 基础运维，涉及到 mongodb 基础环境搭建以及配置和相关问题的处理.</p>
+<ul>
+<li><a href="mongodb/mongodb_docker_installed.html">mongodb 二进制安装与配置</a></li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../operations/git/git_operation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../operations/redis/redis_docker_installed.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../../operations/git/git_dev_specification.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../operations/mongodb/mongodb_docker_installed.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -217,11 +196,11 @@ EOF
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../operations/git/git_operation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../operations/redis/redis_docker_installed.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../../operations/git/git_dev_specification.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../operations/mongodb/mongodb_docker_installed.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -252,16 +231,16 @@ EOF
         </script>
 
 
-        <script src="../../elasticlunr.min.js"></script>
-        <script src="../../mark.min.js"></script>
-        <script src="../../searcher.js"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
-        <script src="../../book.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../../language.js"></script>
+        <script src="../language.js"></script>
 
 
     </div>

@@ -4,7 +4,7 @@
 
 依赖`docker`和 `docker-compose环境`
 
-**注:** docker 环境搭建不建议用于生产环境，仅用于学习和开发环境使用
+**注:** `docker` 环境搭建不建议用于生产环境，仅用于学习和开发环境使用
 
 请参考
 
@@ -12,17 +12,31 @@
 
 👉🏻 [docker-compose 安装](../docker/linux_docker_compose_installed.md)
 
-## docker-compose 安装
+## docker-compose 安装 redis
 
-创建专属的运维网络,用户跟其他容器交互
+**1、创建专属的运维网络,用户跟其他容器交互**
+
+**注:** 创建之前，可以执行以下命令查看`ops_network`网络是否存在，若存在就无需创建
+
+```shell
+docker network ls |grep ops_network
+```
+
+如果有如下输出就无需创建
+
+```PlainText
+514e3dd06943   ops_network   bridge    local
+```
 
 ```shell
 docker network create ops_network
 ```
 
+**2、部署文件准备**
+
 在`/data` 目录下，新建`redis`目录
 
-```
+```shell
 mkdir /data/redis
 ```
 
@@ -30,7 +44,7 @@ mkdir /data/redis
 
 在`/data/redis`下新建`docker-compose.yaml`, `run.sh` , `stop.sh` 三个文件和`conf`文件夹
 
-`redis` 文件夹下存放 redis.conf 文件
+`conf` 文件夹下存放 redis.conf 文件
 
 ```shell
 mkdir -p /data/redis/conf
@@ -154,3 +168,31 @@ rdb-save-incremental-fsync yes
 ```
 
 **注:**这是从官方过滤出来的主要配置，具体配置还要以应用场景为准
+
+目录结构如下
+
+```PlainText
+.
+├── conf
+│   └── redis.conf
+├── data
+├── docker-compose.yaml
+├── run.sh
+└── stop.sh
+```
+
+**3、启动与关闭**
+
+启动
+
+```shell
+cd /data/redis/
+./run.sh
+```
+
+关闭
+
+```shell
+cd /data/redis/
+./stop.sh
+```
