@@ -9,3 +9,5 @@
 - [linux 内核升级(离线)](linux/linux_kernel_upgrade_offline.md)
 
 - [supervisord 安装配置](linux/linux_supervisor_install.md)
+
+- [linux 运维问题排查](linux/linux_ops_issues.md)

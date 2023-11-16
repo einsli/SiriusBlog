@@ -4,6 +4,7 @@
 
 **问题描述**
 
+docker 版本 20.10.8
 python 项目打包，docker 基础镜像用的是`python:3.8`,然后构建报错如下
 
 **RuntimeError: can't start new thread**
@@ -11,3 +12,5 @@ python 项目打包，docker 基础镜像用的是`python:3.8`,然后构建报�
 ✅ **解决方法**
 
 > 基础镜像问题，将镜像由`python:3.8` 换成`python3.6`即可，前提是对`python`要求版本不高，如果对版本要求过高，需要自己单独做镜像
+>
+> docker 版本过低问题，需要升级 docker 版本
