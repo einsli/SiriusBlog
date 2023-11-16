@@ -267,14 +267,13 @@ cluster.name: 'docker-cluster'
 network.host: 0.0.0.0
 # 开启es跨域
 http.cors.enabled: true
-http.cors.allow-origin: "*"
+http.cors.allow-origin: '*'
 http.cors.allow-headers: Authorization
 # 省略其他配置
 # ...
 
 # 在最后新增
 # enable xpack
-xpack.security.enabled: true
 xpack.security.enabled: true
 xpack.security.transport.ssl.enabled: true
 ```
