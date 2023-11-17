@@ -113,6 +113,14 @@ ClientAliveInterval 60
 ClientAliveCountMax 30
 ```
 
+**禁用 ssh 密码登录**
+
+如果想禁用密码登录，可执行如下命令
+
+```shell
+sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
+```
+
 **重启 ssh 服务**
 
 ```shell

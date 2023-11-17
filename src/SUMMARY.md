@@ -9,6 +9,7 @@
     - [linux 内核升级(线上)](operations/linux/linux_kernel_upgrade_online.md)
     - [linux 内核升级(离线)](operations/linux/linux_kernel_upgrade_offline.md)
     - [supervisord 安装配置](operations/linux/linux_supervisor_install.md)
+    - [linux Jdk1.8 安装与配置](operations/linux/linux_jdk_install.md)
     - [linux 运维问题排查](operations/linux/linux_ops_issues.md)
   - [docker](operations/docker.md)
     - [docker 安装与配置](operations/docker/linux_docker_installed.md)
