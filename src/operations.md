@@ -8,6 +8,8 @@
 
 - [redis](operations/redis.md)
 
+- [etcd](operations/etcd.md)
+
 - [git](operations/git.md)
 
 - [mongodb](operations/mongodb.md)

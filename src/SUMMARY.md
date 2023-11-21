@@ -20,6 +20,8 @@
     - [redis docker-compose 安装与配置](operations/redis/redis_docker_installed.md)
   - [mongodb](operations/mongodb.md)
     - [mongodb docker-compose 安装与配置](operations/mongodb/mongodb_docker_installed.md)
+  - [etcd](operations/etcd.md)
+    - [etcd docker 安装(单节点无 ssl)](operations/etcd/etcd_single_node_nossl.md)
   - [elasticsearch](operations/elasticsearch.md)
     - [elasticsearch docker-compose 安装与配置(7.10.0 版本)](operations/elasticsearch/es_docker_installed.md)
     - [elasticsearch ik 分词器安装(7.10.0 版本)](operations/elasticsearch/es_ik_installed.md)
