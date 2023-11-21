@@ -1,4 +1,4 @@
-# redis docker 安装与配置
+# etcd docker 安装与配置
 
 ## 前期准备
 
