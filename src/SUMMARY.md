@@ -15,6 +15,8 @@
     - [docker 安装与配置](operations/docker/linux_docker_installed.md)
     - [docker-compose 安装](operations/docker/linux_docker_compose_installed.md)
     - [docker 相关问题](operations/docker/linux_docker_issues.md)
+  - [mysql](operations/mysql.md)
+    - [mysql 二进制安装(mysql8 版本)](operations/mysql/mysql_binary_installed.md)
   - [redis](operations/redis.md)
     - [redis 二进制安装与配置](operations/redis/redis_binary_installed.md)
     - [redis docker-compose 安装与配置](operations/redis/redis_docker_installed.md)
