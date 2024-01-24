@@ -2416,11 +2416,32 @@ master 和 dev 不可直接提交，需要 pull request, code review 后 merge</
 <li><a href="operations/dns/dns_resolution.html">dns 解析的流程</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="dns-解析的流程"><a class="header" href="#dns-解析的流程">dns 解析的流程</a></h1>
-<h4 id="参考文档-2"><a class="header" href="#参考文档-2">参考文档</a></h4>
+<h2 id="dns-解析的类型"><a class="header" href="#dns-解析的类型">dns 解析的类型</a></h2>
 <ul>
-<li><a href="https://ipw.cn/dns/">ipw.cn</a></li>
+<li>
+<p>A:将域名指向一个 IPv4 地址，如 106.55.75.123。 A 记录归属地是埃文科技的付费接口，为了防止盗刷，每个用户有查询限制，请节省使用。</p>
+</li>
+<li>
+<p>AAAA: 将域名指向一个 IPv6 地址，如 2402:4e00:1013:e500:0:9671:f018:4947。同一个主机名可以同时解析到 IPv4(A 记录)地址 和 IPv6(AAAA 记录)地址上，当只有 IPv4 地址的用户会解析到 IPv4 地址，一般情况下有 IPv6 地址的用户会优先解析到 IPv6 地址。</p>
+</li>
+<li>
+<p>CNAME: 将域名指向另一个域名地址，与其保持相同解析，如 static.ipw.cn 别名到 static.ipw.cn.cdn.dnsv1.com</p>
+</li>
+<li>
+<p>MX: 用于邮件服务器，一般由邮件注册商提供，如 mxbiz1.qq.com。如果邮箱格式为 <a href="mailto:operations/dns/test@ipw.cn">test@ipw.cn</a> 则输入 ipw.cn 查询。如果邮箱格式为 <a href="mailto:operations/dns/test@mail.ipw.cn">test@mail.ipw.cn</a>则输入 mail.ipw.cn 查询。推荐 2 个免费的企业邮箱：腾讯企业邮、网易&gt; 免费企业邮。</p>
+</li>
+<li>
+<p>TXT: 附加文本信息，常用于域名所有权验证，如在申请 HTTPS 证书时需要增加记录</p>
+</li>
+<li>
+<p>PTR: IP 的反向解析记录，例如 159.75.190.197 反解析到 ipw.cn，一般用于提升自建域名邮件服务器的可信度，可提单找云服务商添加。</p>
+</li>
+<li>
+<p>NS: 域名的 DNS 服务器地址，例如 ns3.dnsv2.com，推荐 DNSPod.</p>
+</li>
 </ul>
-<p>DNS 一般分为<code>本地 DNS</code>（一般由电信运营商提供） 和<code>权威 DNS</code>（ 由根 DNS、顶级 DNS、二级 DNS 组成）</p>
+<br>
+<p><strong>DNS 一般分为<code>本地 DNS</code>（一般由电信运营商提供） 和<code>权威 DNS</code>（ 由根 DNS、顶级 DNS、二级 DNS 组成）</strong></p>
 <h2 id="本地-dns"><a class="header" href="#本地-dns">本地 DNS</a></h2>
 <p>本地 DNS 采用递归查询域名解析记录，比如指定一个电信 DNS（202.101.224.69）来解析 ipw.cn，在 ANSWER SECTION 中可以看到直接返回了 ipw.cn 的 A 记录。</p>
 <p>本地 DNS 本身不会记录域名解析记录，而是把请求转发到权威 DNS，逐级递归查询，再把解析记录返回给客户端。当然它会缓存解析记录（解析记录中 TTL 属性控制缓存的时长。）</p>
@@ -2530,6 +2551,10 @@ ipw.cn.			600	IN	A	106.55.75.123
 ipw.cn.			86400	IN	NS	ns4.dnsv2.com.
 ipw.cn.			86400	IN	NS	ns3.dnsv2.com.
 </code></pre>
+<h4 id="参考文档-2"><a class="header" href="#参考文档-2">参考文档</a></h4>
+<ul>
+<li><a href="https://ipw.cn/dns/">ipw.cn</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="云原生"><a class="header" href="#云原生">云原生</a></h1>
 <p>这里主要是云原生运维，涉及到 docker,k8s,prometheus 监控等一系列云原生相关组件的安装配置与使用问题.</p>
 <ul>

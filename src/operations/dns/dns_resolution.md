@@ -1,10 +1,24 @@
 # dns 解析的流程
 
-#### 参考文档
+## dns 解析的类型
 
-- [ipw.cn](https://ipw.cn/dns/)
+- A:将域名指向一个 IPv4 地址，如 106.55.75.123。 A 记录归属地是埃文科技的付费接口，为了防止盗刷，每个用户有查询限制，请节省使用。
 
-DNS 一般分为`本地 DNS`（一般由电信运营商提供） 和`权威 DNS`（ 由根 DNS、顶级 DNS、二级 DNS 组成）
+- AAAA: 将域名指向一个 IPv6 地址，如 2402:4e00:1013:e500:0:9671:f018:4947。同一个主机名可以同时解析到 IPv4(A 记录)地址 和 IPv6(AAAA 记录)地址上，当只有 IPv4 地址的用户会解析到 IPv4 地址，一般情况下有 IPv6 地址的用户会优先解析到 IPv6 地址。
+
+- CNAME: 将域名指向另一个域名地址，与其保持相同解析，如 static.ipw.cn 别名到 static.ipw.cn.cdn.dnsv1.com
+
+- MX: 用于邮件服务器，一般由邮件注册商提供，如 mxbiz1.qq.com。如果邮箱格式为 <test@ipw.cn> 则输入 ipw.cn 查询。如果邮箱格式为 <test@mail.ipw.cn>则输入 mail.ipw.cn 查询。推荐 2 个免费的企业邮箱：腾讯企业邮、网易> 免费企业邮。
+
+- TXT: 附加文本信息，常用于域名所有权验证，如在申请 HTTPS 证书时需要增加记录
+
+- PTR: IP 的反向解析记录，例如 159.75.190.197 反解析到 ipw.cn，一般用于提升自建域名邮件服务器的可信度，可提单找云服务商添加。
+
+- NS: 域名的 DNS 服务器地址，例如 ns3.dnsv2.com，推荐 DNSPod.
+
+<br>
+
+**DNS 一般分为`本地 DNS`（一般由电信运营商提供） 和`权威 DNS`（ 由根 DNS、顶级 DNS、二级 DNS 组成）**
 
 ## 本地 DNS
 
@@ -134,3 +148,7 @@ ipw.cn.			600	IN	A	106.55.75.123
 ipw.cn.			86400	IN	NS	ns4.dnsv2.com.
 ipw.cn.			86400	IN	NS	ns3.dnsv2.com.
 ```
+
+#### 参考文档
+
+- [ipw.cn](https://ipw.cn/dns/)
