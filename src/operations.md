@@ -15,3 +15,5 @@
 - [mongodb](operations/mongodb.md)
 
 - [elasticsearch](operations/elasticsearch.md)
+
+- [dns](operations/dns.md)
