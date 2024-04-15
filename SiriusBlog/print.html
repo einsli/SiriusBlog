@@ -1,17 +1,17 @@
 <!DOCTYPE HTML>
-<html lang="zh" class="sidebar-visible no-js navy">
+<html lang="zh" class="navy" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Sirius运维开发笔记</title>
-        <meta name="robots" content="noindex" />
+        <meta name="robots" content="noindex">
 
 
         <!-- Custom HTML head -->
         
         <meta name="description" content="Sirius运维开发笔记">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -32,7 +32,7 @@
         <!-- Custom theme stylesheets -->
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
@@ -62,31 +62,38 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('navy')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var html = document.querySelector('html');
+            var body = document.querySelector('body');
             var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_kernel_upgrade_online.html"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级(线上)</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_kernel_upgrade_offline.html"><strong aria-hidden="true">2.1.3.</strong> linux 内核升级(离线)</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_supervisor_install.html"><strong aria-hidden="true">2.1.4.</strong> supervisord 安装配置</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_jdk_install.html"><strong aria-hidden="true">2.1.5.</strong> linux Jdk1.8 安装与配置</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_ops_issues.html"><strong aria-hidden="true">2.1.6.</strong> linux 运维问题排查</a></li></ol></li><li class="chapter-item expanded "><a href="operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/docker/linux_docker_installed.html"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item expanded "><a href="operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li><li class="chapter-item expanded "><a href="operations/docker/linux_docker_issues.html"><strong aria-hidden="true">2.2.3.</strong> docker 相关问题</a></li></ol></li><li class="chapter-item expanded "><a href="operations/mysql.html"><strong aria-hidden="true">2.3.</strong> mysql</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/mysql/mysql_binary_installed.html"><strong aria-hidden="true">2.3.1.</strong> mysql 二进制安装(mysql8 版本)</a></li></ol></li><li class="chapter-item expanded "><a href="operations/redis.html"><strong aria-hidden="true">2.4.</strong> redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/redis/redis_binary_installed.html"><strong aria-hidden="true">2.4.1.</strong> redis 二进制安装与配置</a></li><li class="chapter-item expanded "><a href="operations/redis/redis_docker_installed.html"><strong aria-hidden="true">2.4.2.</strong> redis docker-compose 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="operations/mongodb.html"><strong aria-hidden="true">2.5.</strong> mongodb</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/mongodb/mongodb_docker_installed.html"><strong aria-hidden="true">2.5.1.</strong> mongodb docker-compose 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="operations/etcd.html"><strong aria-hidden="true">2.6.</strong> etcd</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/etcd/etcd_single_node_nossl.html"><strong aria-hidden="true">2.6.1.</strong> etcd docker 安装(单节点无 ssl)</a></li></ol></li><li class="chapter-item expanded "><a href="operations/elasticsearch.html"><strong aria-hidden="true">2.7.</strong> elasticsearch</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/elasticsearch/es_docker_installed.html"><strong aria-hidden="true">2.7.1.</strong> elasticsearch docker-compose 安装与配置(7.10.0 版本)</a></li><li class="chapter-item expanded "><a href="operations/elasticsearch/es_ik_installed.html"><strong aria-hidden="true">2.7.2.</strong> elasticsearch ik 分词器安装(7.10.0 版本)</a></li></ol></li><li class="chapter-item expanded "><a href="operations/git.html"><strong aria-hidden="true">2.8.</strong> git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/git/git_operation.html"><strong aria-hidden="true">2.8.1.</strong> git 版本控制</a></li><li class="chapter-item expanded "><a href="operations/git/git_clone_without_pass.html"><strong aria-hidden="true">2.8.2.</strong> git http 方式免密克隆代码</a></li><li class="chapter-item expanded "><a href="operations/git/git_dev_specification.html"><strong aria-hidden="true">2.8.3.</strong> git 开发管理规范</a></li></ol></li><li class="chapter-item expanded "><a href="operations/dns.html"><strong aria-hidden="true">2.9.</strong> dns</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/dns/dns_resolution.html"><strong aria-hidden="true">2.9.1.</strong> dns 的解析流程</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/monitor.html"><strong aria-hidden="true">3.1.</strong> 监控</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/monitor/n9e_install.html"><strong aria-hidden="true">3.1.1.</strong> 夜莺监控安装配置</a></li><li class="chapter-item expanded "><a href="cloud_operations/monitor/n9e_ldap_config.html"><strong aria-hidden="true">3.1.2.</strong> 夜莺配置 ldap 单点登录</a></li><li class="chapter-item expanded "><a href="cloud_operations/monitor/alert_prom_sql.html"><strong aria-hidden="true">3.1.3.</strong> prometheus 监控告警 sql</a></li><li class="chapter-item expanded "><a href="cloud_operations/monitor/prometheus_domain_monitor.html"><strong aria-hidden="true">3.1.4.</strong> prometheus 监控域名</a></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations/kubernetes.html"><strong aria-hidden="true">3.2.</strong> kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/kubernetes/kubernetes_sa.html"><strong aria-hidden="true">3.2.1.</strong> kubernetes service account</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/kubernetes/kubernetes_sa/k8s_sa_kubeconfig.html"><strong aria-hidden="true">3.2.1.1.</strong> kubernetees 基于 sa 创建 kubeconfig 访问(集群版)</a></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations/kubernetes/kubernetes_issues.html"><strong aria-hidden="true">3.2.2.</strong> k8s 相关问题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/kubernetes/kubernetes_issues/k8s_secret_issues.html"><strong aria-hidden="true">3.2.2.1.</strong> kubernetes secret 相关问题</a></li></ol></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_kernel_upgrade_online.html"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级(线上)</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_kernel_upgrade_offline.html"><strong aria-hidden="true">2.1.3.</strong> linux 内核升级(离线)</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_supervisor_install.html"><strong aria-hidden="true">2.1.4.</strong> supervisord 安装配置</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_jdk_install.html"><strong aria-hidden="true">2.1.5.</strong> linux Jdk1.8 安装与配置</a></li><li class="chapter-item expanded "><a href="operations/linux/linux_ops_issues.html"><strong aria-hidden="true">2.1.6.</strong> linux 运维问题排查</a></li></ol></li><li class="chapter-item expanded "><a href="operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/docker/linux_docker_installed.html"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item expanded "><a href="operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li><li class="chapter-item expanded "><a href="operations/docker/linux_docker_issues.html"><strong aria-hidden="true">2.2.3.</strong> docker 相关问题</a></li></ol></li><li class="chapter-item expanded "><a href="operations/mysql.html"><strong aria-hidden="true">2.3.</strong> mysql</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/mysql/mysql_binary_installed.html"><strong aria-hidden="true">2.3.1.</strong> mysql 二进制安装(mysql8 版本)</a></li></ol></li><li class="chapter-item expanded "><a href="operations/redis.html"><strong aria-hidden="true">2.4.</strong> redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/redis/redis_binary_installed.html"><strong aria-hidden="true">2.4.1.</strong> redis 二进制安装与配置</a></li><li class="chapter-item expanded "><a href="operations/redis/redis_docker_installed.html"><strong aria-hidden="true">2.4.2.</strong> redis docker-compose 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="operations/mongodb.html"><strong aria-hidden="true">2.5.</strong> mongodb</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/mongodb/mongodb_docker_installed.html"><strong aria-hidden="true">2.5.1.</strong> mongodb docker-compose 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="operations/etcd.html"><strong aria-hidden="true">2.6.</strong> etcd</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/etcd/etcd_single_node_nossl.html"><strong aria-hidden="true">2.6.1.</strong> etcd docker 安装(单节点无 ssl)</a></li></ol></li><li class="chapter-item expanded "><a href="operations/elasticsearch.html"><strong aria-hidden="true">2.7.</strong> elasticsearch</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/elasticsearch/es_docker_installed.html"><strong aria-hidden="true">2.7.1.</strong> elasticsearch docker-compose 安装与配置(7.10.0 版本)</a></li><li class="chapter-item expanded "><a href="operations/elasticsearch/es_ik_installed.html"><strong aria-hidden="true">2.7.2.</strong> elasticsearch ik 分词器安装(7.10.0 版本)</a></li></ol></li><li class="chapter-item expanded "><a href="operations/git.html"><strong aria-hidden="true">2.8.</strong> git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/git/git_operation.html"><strong aria-hidden="true">2.8.1.</strong> git 版本控制</a></li><li class="chapter-item expanded "><a href="operations/git/git_clone_without_pass.html"><strong aria-hidden="true">2.8.2.</strong> git http 方式免密克隆代码</a></li><li class="chapter-item expanded "><a href="operations/git/git_dev_specification.html"><strong aria-hidden="true">2.8.3.</strong> git 开发管理规范</a></li></ol></li><li class="chapter-item expanded "><a href="operations/harbor.html"><strong aria-hidden="true">2.9.</strong> harbor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/harbor/harbor_install.html"><strong aria-hidden="true">2.9.1.</strong> harbor 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="operations/dns.html"><strong aria-hidden="true">2.10.</strong> dns</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="operations/dns/dns_resolution.html"><strong aria-hidden="true">2.10.1.</strong> dns 的解析流程</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/monitor.html"><strong aria-hidden="true">3.1.</strong> 监控</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/monitor/n9e_install.html"><strong aria-hidden="true">3.1.1.</strong> 夜莺监控安装配置</a></li><li class="chapter-item expanded "><a href="cloud_operations/monitor/n9e_ldap_config.html"><strong aria-hidden="true">3.1.2.</strong> 夜莺配置 ldap 单点登录</a></li><li class="chapter-item expanded "><a href="cloud_operations/monitor/alert_prom_sql.html"><strong aria-hidden="true">3.1.3.</strong> prometheus 监控告警 sql</a></li><li class="chapter-item expanded "><a href="cloud_operations/monitor/prometheus_domain_monitor.html"><strong aria-hidden="true">3.1.4.</strong> prometheus 监控域名</a></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations/kubernetes.html"><strong aria-hidden="true">3.2.</strong> kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/kubernetes/kubernetes_sa.html"><strong aria-hidden="true">3.2.1.</strong> kubernetes service account</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/kubernetes/kubernetes_sa/k8s_sa_kubeconfig.html"><strong aria-hidden="true">3.2.1.1.</strong> kubernetees 基于 sa 创建 kubeconfig 访问(集群版)</a></li></ol></li><li class="chapter-item expanded "><a href="cloud_operations/kubernetes/kubernetes_issues.html"><strong aria-hidden="true">3.2.2.</strong> k8s 相关问题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud_operations/kubernetes/kubernetes_issues/k8s_secret_issues.html"><strong aria-hidden="true">3.2.2.1.</strong> kubernetes secret 相关问题</a></li></ol></li></ol></li></ol></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -117,9 +124,9 @@
                                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -191,6 +198,9 @@
 </li>
 <li>
 <p><a href="operations/git.html">git</a></p>
+</li>
+<li>
+<p><a href="operations/harbor.html">harbor</a></p>
 </li>
 <li>
 <p><a href="operations/mongodb.html">mongodb</a></p>
@@ -274,7 +284,7 @@ sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 <p><strong>关闭 DNS 反查</strong>
 使用了 dns 反查，这种情况下当 ssh 登录某个 IP 时，系统会试图通过 DNS 反查相对应的域名，如果 DNS 中没有这个 IP 的域名解析，则会等到 DNS 查询超时才会进行下一步，消耗很长时间。</p>
 <p>关闭 dns 反查命令如下</p>
-<pre><code class="language-shell">sed -ie &quot;/UseDNS/s/yes/no/g;/UseDNS/s/#//g&quot; /etc/ssh/sshd_config
+<pre><code class="language-shell">sed -ie "/UseDNS/s/yes/no/g;/UseDNS/s/#//g" /etc/ssh/sshd_config
 </code></pre>
 <p><strong>修改 ssh 超时时间</strong></p>
 <pre><code class="language-shell">vim /etc/ssh/sshd_config
@@ -330,7 +340,7 @@ ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡�
 <pre><code class="language-shell">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 </code></pre>
 <h4 id="3-查看可用的系统内核包"><a class="header" href="#3-查看可用的系统内核包">(3) 查看可用的系统内核包</a></h4>
-<pre><code class="language-shell">yum --disablerepo=&quot;*&quot; --enablerepo=&quot;elrepo-kernel&quot; list available
+<pre><code class="language-shell">yum --disablerepo="*" --enablerepo="elrepo-kernel" list available
 </code></pre>
 <p>输出如下</p>
 <pre><code class="language-PlainText">Loaded plugins: fastestmirror
@@ -363,7 +373,7 @@ Loading mirror speeds from cached hostfile
 <h4 id="5-设置-grub2"><a class="header" href="#5-设置-grub2">(5) 设置 grub2</a></h4>
 <p>内核安装好后，需要设置为默认启动选项并重启后才会生效</p>
 <p>1、 查看系统上的所有可用内核</p>
-<pre><code class="language-shell">awk -F\' '$1==&quot;menuentry &quot; {print i++ &quot; : &quot; $2}' /etc/grub2.cfg
+<pre><code class="language-shell">awk -F\' '$1=="menuentry " {print i++ " : " $2}' /etc/grub2.cfg
 </code></pre>
 <p>输出如下</p>
 <pre><code class="language-PlainText">0 : CentOS Linux (4.18.7-1.el7.elrepo.x86_64) 7 (Core)
@@ -382,12 +392,12 @@ Loading mirror speeds from cached hostfile
 <pre><code class="language-shell">vim /etc/default/grub
 </code></pre>
 <pre><code class="language-PlainText">GRUB_TIMEOUT=5
-GRUB_DISTRIBUTOR=&quot;$(sed 's, release .*$,,g' /etc/system-release)&quot;
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
 GRUB_DEFAULT=0
 GRUB_DISABLE_SUBMENU=true
-GRUB_TERMINAL_OUTPUT=&quot;console&quot;
-GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rd.lvm.lv=cl/root rhgb quiet&quot;
-GRUB_DISABLE_RECOVERY=&quot;true&quot;
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="crashkernel=auto rd.lvm.lv=cl/root rhgb quiet"
+GRUB_DISABLE_RECOVERY="true"
 </code></pre>
 <p>3、生成 grub 配置文件并重启</p>
 <pre><code class="language-shell">grub2-mkconfig -o /boot/grub2/grub.cfg
@@ -455,7 +465,7 @@ wget https://elrepo.org/linux/kernel/el7/x86_64/RPMS/kernel-ml-devel-5.16.10-1.e
 kernel-lt-devel-4.4.206-1.el7.elrepo.x86_64.rpm
 </code></pre>
 <h3 id="22-查看系统上的所有可用内核"><a class="header" href="#22-查看系统上的所有可用内核">2.2 查看系统上的所有可用内核</a></h3>
-<pre><code class="language-shell">awk -F\' '$1==&quot;menuentry &quot; {print i++ &quot; : &quot; $2}' /etc/grub2.cfg
+<pre><code class="language-shell">awk -F\' '$1=="menuentry " {print i++ " : " $2}' /etc/grub2.cfg
 </code></pre>
 <pre><code class="language-text">0 : CentOS Linux (5.16.10-1.el7.elrepo.x86_64) 7 (Core)
 1 : CentOS Linux (3.10.0-862.11.6.el7.x86_64) 7 (Core)
@@ -473,12 +483,12 @@ kernel-lt-devel-4.4.206-1.el7.elrepo.x86_64.rpm
 <pre><code class="language-shell">vim /etc/default/grub
 </code></pre>
 <pre><code class="language-text">GRUB_TIMEOUT=5
-GRUB_DISTRIBUTOR=&quot;$(sed 's, release .*$,,g' /etc/system-release)&quot;
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
 GRUB_DEFAULT=0
 GRUB_DISABLE_SUBMENU=true
-GRUB_TERMINAL_OUTPUT=&quot;console&quot;
-GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rd.lvm.lv=cl/root rhgb quiet&quot;
-GRUB_DISABLE_RECOVERY=&quot;true&quot;
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="crashkernel=auto rd.lvm.lv=cl/root rhgb quiet"
+GRUB_DISABLE_RECOVERY="true"
 </code></pre>
 <h3 id="23-生成-grub-配置文件并重启"><a class="header" href="#23-生成-grub-配置文件并重启">2.3 生成 grub 配置文件并重启</a></h3>
 <pre><code class="language-shell">grub2-mkconfig -o /boot/grub2/grub.cfg
@@ -615,7 +625,7 @@ export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 <pre><code class="language-shell">java -version
 </code></pre>
 <p>得到有如下输出</p>
-<pre><code class="language-PlainText">java version &quot;1.8.0_161&quot;
+<pre><code class="language-PlainText">java version "1.8.0_161"
 
 Java(TM) SE Runtime Environment (build 1.8.0_161-b12)
 
@@ -792,11 +802,11 @@ yum install -y bash-completion
 <h3 id="31-配置-docker-镜像下载加速器"><a class="header" href="#31-配置-docker-镜像下载加速器">3.1 配置 docker 镜像下载加速器</a></h3>
 <pre><code class="language-shell">tee /etc/docker/daemon.json &lt;&lt; eof
 {
-    &quot;registry-mirrors&quot;: [
-        &quot;https://1nj0zren.mirror.aliyuncs.com&quot;,
-        &quot;https://docker.mirrors.ustc.edu.cn&quot;,
-        &quot;http://f1361db2.m.daocloud.io&quot;,
-        &quot;https://registry.docker-cn.com&quot;
+    "registry-mirrors": [
+        "https://1nj0zren.mirror.aliyuncs.com",
+        "https://docker.mirrors.ustc.edu.cn",
+        "http://f1361db2.m.daocloud.io",
+        "https://registry.docker-cn.com"
     ]
 }
 eof
@@ -804,17 +814,17 @@ eof
 <h3 id="32-修改-docker-的默认镜像容器数据存储位置"><a class="header" href="#32-修改-docker-的默认镜像容器数据存储位置">3.2 修改 docker 的默认镜像、容器数据存储位置</a></h3>
 <p>docker 的默认存储位置是 /var/lib/docker/ ，在根目录下，docker 运行一段时间后，会导致根目录存储爆炸。所有最好将存储位置自定义到服务器存储最大的目录下。</p>
 <p>然后在 <code>/etc/docker/daemon.json</code> 文件中指定默认存储路径（此路径可自定义），添加以下内容：</p>
-<pre><code class="language-PlainText">&quot;data-root&quot;: &quot;/vdb/docker_images&quot;
+<pre><code class="language-PlainText">"data-root": "/vdb/docker_images"
 </code></pre>
 <p>修改如下</p>
 <pre><code class="language-json">{
-  &quot;registry-mirrors&quot;: [
-    &quot;https://1nj0zren.mirror.aliyuncs.com&quot;,
-    &quot;https://docker.mirrors.ustc.edu.cn&quot;,
-    &quot;http://f1361db2.m.daocloud.io&quot;,
-    &quot;https://registry.docker-cn.com&quot;
+  "registry-mirrors": [
+    "https://1nj0zren.mirror.aliyuncs.com",
+    "https://docker.mirrors.ustc.edu.cn",
+    "http://f1361db2.m.daocloud.io",
+    "https://registry.docker-cn.com"
   ],
-  &quot;data-root&quot;: &quot;/vdb/docker_images&quot;
+  "data-root": "/vdb/docker_images"
 }
 </code></pre>
 <h3 id="33-重新加载配置与重启-docker"><a class="header" href="#33-重新加载配置与重启-docker">3.3 重新加载配置与重启 docker</a></h3>
@@ -1053,8 +1063,8 @@ chown -R mysql:mysql /var/log/mysql-slow.log
 <pre><code class="language-shell">vim ~/.bashrc
 
 # 配置mysql 环境变量
-export MYSQL_HOME=&quot;/var/lib/mysql&quot;
-export PATH=&quot;${PATH}:${MYSQL_HOME}/bin&quot;
+export MYSQL_HOME="/var/lib/mysql"
+export PATH="${PATH}:${MYSQL_HOME}/bin"
 
 # 保存后，刷新下环境变量
 source ~/.bashrc
@@ -1105,7 +1115,7 @@ make &amp;&amp; make install
 <p>redis 的默认配置文件就是位于 redis 安装目录下的 redis.conf</p>
 <p>即<code>/usr/local/redis-7.0.8</code> 目录下</p>
 <p>去掉 redis 注释信息，重新生成新的 redis_6379.conf</p>
-<pre><code class="language-shell">cat redis.conf | grep -v &quot;#&quot; | grep -v &quot;^$&quot; &gt; redis-6379.conf
+<pre><code class="language-shell">cat redis.conf | grep -v "#" | grep -v "^$" &gt; redis-6379.conf
 </code></pre>
 <p>需要将<code>redis-6379.conf</code>配置中<code>dir</code>的值做如下修改</p>
 <pre><code class="language-PlainText">dir /opt/redis/db
@@ -1235,7 +1245,7 @@ daemonize no
 supervised no
 pidfile /var/run/redis_6379.pid
 loglevel notice
-logfile &quot;&quot;
+logfile ""
 databases 16
 always-show-logo yes
 save 900 1
@@ -1259,7 +1269,7 @@ lazyfree-lazy-expire no
 lazyfree-lazy-server-del no
 replica-lazy-flush no
 appendonly no
-appendfilename &quot;appendonly.aof&quot;
+appendfilename "appendonly.aof"
 appendfsync everysec
 no-appendfsync-on-rewrite no
 auto-aof-rewrite-percentage 100
@@ -1270,7 +1280,7 @@ lua-time-limit 5000
 slowlog-log-slower-than 10000
 slowlog-max-len 128
 latency-monitor-threshold 0
-notify-keyspace-events &quot;&quot;
+notify-keyspace-events ""
 hash-max-ziplist-entries 512
 hash-max-ziplist-value 64
 list-max-ziplist-size -2
@@ -1341,7 +1351,7 @@ rdb-save-incremental-fsync yes
 <pre><code class="language-shell">mkdir -p /data/mongodb
 
 cat &gt; /data/mongodb/docker-compose.yaml&lt;&lt; EOF
-version: &quot;3.1&quot;
+version: "3.1"
 services:
   local-mongo:
     image: mongo:7.0.0
@@ -1436,19 +1446,19 @@ version: '3.1'
 services:
   etcd-server:
     image: 'bitnami/etcd:latest'
-    container_name: &quot;etcd-server&quot;
+    container_name: "etcd-server"
     environment:
-      - &quot;ETCD_NAME=node1&quot;
-      - &quot;ETCD_ROOT_PASSWORD=Passw0rd&quot;
-      - &quot;ETCD_CLIENT_CERT_AUTH=true&quot;
-      - &quot;ETCD_PEER_CLIENT_CERT_AUTH=true&quot;
-      - &quot;ETCD_ADVERTISE_CLIENT_URLS=http://192.168.1.102:42379&quot;
-      - &quot;ETCD_INITIAL_ADVERTISE_PEER_URLS=http://192.168.1.102:42380&quot;
-      - &quot;ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379&quot;
-      - &quot;ETCD_LISTEN_PEER_URLS=http://0.0.0.0:2380&quot;
-      - &quot;ETCD_INITIAL_CLUSTER_TOKEN=etcd_cluster&quot;
-      - &quot;ETCD_INITIAL_CLUSTER=node1=http://192.168.1.102:42380&quot;
-      - &quot;ETCD_INITIAL_CLUSTER_STATE=new&quot;
+      - "ETCD_NAME=node1"
+      - "ETCD_ROOT_PASSWORD=Passw0rd"
+      - "ETCD_CLIENT_CERT_AUTH=true"
+      - "ETCD_PEER_CLIENT_CERT_AUTH=true"
+      - "ETCD_ADVERTISE_CLIENT_URLS=http://192.168.1.102:42379"
+      - "ETCD_INITIAL_ADVERTISE_PEER_URLS=http://192.168.1.102:42380"
+      - "ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379"
+      - "ETCD_LISTEN_PEER_URLS=http://0.0.0.0:2380"
+      - "ETCD_INITIAL_CLUSTER_TOKEN=etcd_cluster"
+      - "ETCD_INITIAL_CLUSTER=node1=http://192.168.1.102:42380"
+      - "ETCD_INITIAL_CLUSTER_STATE=new"
     volumes:
       - ./etcd_data:/bitnami/etcd/data
       - ./etcd_conf:/opt/bitnami/etcd/conf
@@ -1459,8 +1469,8 @@ services:
       - ops_network
 
   etcdkeeper:
-    image: &quot;deltaprojects/etcdkeeper:202311192256&quot;
-    container_name: &quot;etcdkeeper&quot;
+    image: "deltaprojects/etcdkeeper:202311192256"
+    container_name: "etcdkeeper"
     ports:
       - 11080:8080
     depends_on:
@@ -1575,35 +1585,35 @@ version: '3.1'
 
 services:
   elasticsearch:
-    image: &quot;docker.elastic.co/elasticsearch/elasticsearch:${ES_VERSION}&quot;
+    image: "docker.elastic.co/elasticsearch/elasticsearch:${ES_VERSION}"
     container_name: elasticsearch
     environment:
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
       discovery.type: single-node
-      ES_JAVA_OPTS: &quot;-Xmx512m -Xms512m&quot;
-      ELASTIC_PASSWORD: &quot;passw0rd&quot; # elastic账号密码
+      ES_JAVA_OPTS: "-Xmx512m -Xms512m"
+      ELASTIC_PASSWORD: "passw0rd" # elastic账号密码
     volumes:
       - /etc/localtime:/etc/localtime
       - ./es_data:/usr/share/elasticsearch/data
     ports:
-      - &quot;12200:9200&quot;
-      - &quot;12300:9300&quot;
-    user: &quot;1000:1000&quot;
+      - "12200:9200"
+      - "12300:9300"
+    user: "1000:1000"
     networks:
       - ops_network
 
   kibana:
     depends_on:
       - elasticsearch
-    image: &quot;docker.elastic.co/kibana/kibana:${ES_VERSION}&quot;
+    image: "docker.elastic.co/kibana/kibana:${ES_VERSION}"
     container_name: kibana
     environment:
       - ELASTICSEARCH_URL=http://elasticsearch:9200
     volumes:
       - /etc/localtime:/etc/localtime
     ports:
-      - &quot;8601:5601&quot;
+      - "8601:5601"
     links:
       - elasticsearch
     networks:
@@ -1885,7 +1895,7 @@ chown -R 1000:1000 /data/elasticsearch/plugins/
 </code></pre>
 <p><strong>4、问题排查</strong></p>
 <p>如果遇到了下面的问题</p>
-<pre><code class="language-PlainText">&quot;Caused by: java.nio.file.FileSystemException: /usr/share/elasticsearch/plugins/httpclient-4.5.2.jar/plugin-descriptor.properties: Not a directory&quot;,
+<pre><code class="language-PlainText">"Caused by: java.nio.file.FileSystemException: /usr/share/elasticsearch/plugins/httpclient-4.5.2.jar/plugin-descriptor.properties: Not a directory",
 </code></pre>
 <p>说明你把 ik 分词器的文件放到了<code>plugins</code>目录下，导致的报错</p>
 <p>请参考 👉🏻 <a href="https://blog.csdn.net/dxtljly/article/details/127102211">记一次 docker 安装 elasticsearch 遇到的坑</a></p>
@@ -1893,47 +1903,47 @@ chown -R 1000:1000 /data/elasticsearch/plugins/
 <p>在<code>kibana</code>中请求如下内容</p>
 <pre><code class="language-elasticsearch">GET _analyze
 {
-  &quot;analyzer&quot;: &quot;ik_max_word&quot;,
-  &quot;text&quot;:&quot;我是中国人&quot;
+  "analyzer": "ik_max_word",
+  "text":"我是中国人"
 }
 </code></pre>
 <p>响应内容</p>
 <pre><code class="language-json">{
-  &quot;tokens&quot;: [
+  "tokens": [
     {
-      &quot;token&quot;: &quot;我&quot;,
-      &quot;start_offset&quot;: 0,
-      &quot;end_offset&quot;: 1,
-      &quot;type&quot;: &quot;CN_CHAR&quot;,
-      &quot;position&quot;: 0
+      "token": "我",
+      "start_offset": 0,
+      "end_offset": 1,
+      "type": "CN_CHAR",
+      "position": 0
     },
     {
-      &quot;token&quot;: &quot;是&quot;,
-      &quot;start_offset&quot;: 1,
-      &quot;end_offset&quot;: 2,
-      &quot;type&quot;: &quot;CN_CHAR&quot;,
-      &quot;position&quot;: 1
+      "token": "是",
+      "start_offset": 1,
+      "end_offset": 2,
+      "type": "CN_CHAR",
+      "position": 1
     },
     {
-      &quot;token&quot;: &quot;中国人&quot;,
-      &quot;start_offset&quot;: 2,
-      &quot;end_offset&quot;: 5,
-      &quot;type&quot;: &quot;CN_WORD&quot;,
-      &quot;position&quot;: 2
+      "token": "中国人",
+      "start_offset": 2,
+      "end_offset": 5,
+      "type": "CN_WORD",
+      "position": 2
     },
     {
-      &quot;token&quot;: &quot;中国&quot;,
-      &quot;start_offset&quot;: 2,
-      &quot;end_offset&quot;: 4,
-      &quot;type&quot;: &quot;CN_WORD&quot;,
-      &quot;position&quot;: 3
+      "token": "中国",
+      "start_offset": 2,
+      "end_offset": 4,
+      "type": "CN_WORD",
+      "position": 3
     },
     {
-      &quot;token&quot;: &quot;国人&quot;,
-      &quot;start_offset&quot;: 3,
-      &quot;end_offset&quot;: 5,
-      &quot;type&quot;: &quot;CN_WORD&quot;,
-      &quot;position&quot;: 4
+      "token": "国人",
+      "start_offset": 3,
+      "end_offset": 5,
+      "type": "CN_WORD",
+      "position": 4
     }
   ]
 }
@@ -1973,8 +1983,8 @@ git help
 </ul>
 <p>一般用全局范围配置</p>
 <h3 id="121-配置全局用户信息"><a class="header" href="#121-配置全局用户信息">1.2.1 配置全局用户信息</a></h3>
-<pre><code class="language-bash">git config --global user.name &quot;einsli&quot;
-git config --global user.email &quot;einsli@123.com&quot;
+<pre><code class="language-bash">git config --global user.name "einsli"
+git config --global user.email "einsli@123.com"
 </code></pre>
 <h3 id="122-查看配置信息"><a class="header" href="#122-查看配置信息">1.2.2 查看配置信息</a></h3>
 <pre><code class="language-bash">git config --list
@@ -2021,7 +2031,7 @@ core.excludesfile=/Users/einsli/.gitignore_global
 [web]
 [credential]
 				helper = cache --timeout=200
-[filter &quot;media&quot;]
+[filter "media"]
 				clean = git-media-clean %f
 				smudge = git-media-smudge %f
 [alias]
@@ -2036,7 +2046,7 @@ core.excludesfile=/Users/einsli/.gitignore_global
 <p>可以在系统级别设置别名, 当前平台 MacOS 平台，用户配置文件名为.bash_profile</p>
 <pre><code class="language-bash">vim ~/.bash_profile
 
-# 将 alias goc=&quot;git check out&quot; 添加到第一行即可
+# 将 alias goc="git check out" 添加到第一行即可
 
 # 退出 并更新
 souroce ~/.bash_profile
@@ -2084,10 +2094,10 @@ branches    description   info      refs
 Initial commit
 
 Untracked files:
-  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+  (use "git add &lt;file&gt;..." to include in what will be committed)
 				index.html
 
-nothing added to commit but untracked files present(use &quot;git add&quot; to track)
+nothing added to commit but untracked files present(use "git add" to track)
 </code></pre>
 <p>commit 之前先执行 git add</p>
 <pre><code class="language-bash">git add index.html
@@ -2101,7 +2111,7 @@ nothing added to commit but untracked files present(use &quot;git add&quot; to t
 Initial commit
 
 Changes to be committed:
-  (use &quot;git tm --cached &lt;file&gt;...&quot; to unstage)
+  (use "git tm --cached &lt;file&gt;..." to unstage)
 		  new files: index.html
 </code></pre>
 <p>确认提交</p>
@@ -2143,7 +2153,7 @@ Date: Sun Nov 11:07:00 2020 +0800
 <p>例如:</p>
 <p>当前目录下新建 style.css，添加内容后并提交</p>
 <pre><code class="language-bash">git add style.css
-git commit -m &quot;添加style.css&quot;
+git commit -m "添加style.css"
 </code></pre>
 <p>在可视化界面将 style.css 重命名为 them.css</p>
 <p>查看当前状态</p>
@@ -2152,13 +2162,13 @@ git commit -m &quot;添加style.css&quot;
 <p>output 如下</p>
 <pre><code>On branch master
 Changes not stages for commit:
-		(use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)
-		(use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+		(use "git add/rm &lt;file&gt;..." to update what will be committed)
+		(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 				deleted; sytle.css
 Untracked files:
-		(use &quot;git add &lt;file&gt;...&quot; to include in what will will be committed)
+		(use "git add &lt;file&gt;..." to include in what will will be committed)
 				theme.css
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+no changes added to commit (use "git add" and/or "git commit -a")
 </code></pre>
 <p>由此看来，git 不知道通过可视化界面重命名了此文件</p>
 <p>可以这样执行</p>
@@ -2171,11 +2181,11 @@ git add theme.css
 <pre><code class="language-bash">git status
 </code></pre>
 <pre><code>Changes to be committed:
-		(use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+		(use "git reset HEAD &lt;file&gt;..." to unstage)
 					renamed: style.css -&gt;them.css
 </code></pre>
 <p>然后提交即可</p>
-<pre><code class="language-bash">git commit -m &quot;重命名style.css为them.css&quot;
+<pre><code class="language-bash">git commit -m "重命名style.css为them.css"
 </code></pre>
 <p>方法二</p>
 <p>git mv</p>
@@ -2186,7 +2196,7 @@ git add theme.css
 </code></pre>
 <p>output 如下</p>
 <pre><code class="language-bash">Changes to be committed:
-		(use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+		(use "git reset HEAD &lt;file&gt;..." to unstage)
 					renamed: theme.css -&gt;einsli-them.css
 </code></pre>
 <p>然后提交即可</p>
@@ -2242,7 +2252,7 @@ aa5673a 恢复了index.html
 <pre><code class="language-bash">git log --oneline
 </code></pre>
 <p>output 如下</p>
-<pre><code>aaab1c0 Revert &quot;添加了Bootstrap框架&quot;
+<pre><code>aaab1c0 Revert "添加了Bootstrap框架"
 b6b86f 添加了JQuery 1.2.1
 bb95e87 添加了Bootstrap框架
 aa5673a 恢复了index.html
@@ -2259,7 +2269,7 @@ aa5673a 恢复了index.html
 <pre><code class="language-bash">git log --oneline
 </code></pre>
 <p>output 如下</p>
-<pre><code>aaab1c0 Revert &quot;添加了Bootstrap框架&quot;
+<pre><code>aaab1c0 Revert "添加了Bootstrap框架"
 b6b86f 添加了JQuery 1.2.1
 bb95e87 添加了Bootstrap框架
 aa5673a 恢复了index.html
@@ -2277,7 +2287,7 @@ aa5673a 恢复了index.html
 <h3 id="1310-git-stash"><a class="header" href="#1310-git-stash">1.3.10 git stash</a></h3>
 <p>可以把修改暂时存到一个地方，保存工作进度</p>
 <p>例如当前目录创建了一个新的 txt 文档，但是提交的时候，不想将当前状态提交</p>
-<pre><code class="language-bash">git stash save &quot;修改了txt文档&quot;
+<pre><code class="language-bash">git stash save "修改了txt文档"
 </code></pre>
 <p>查看保存的工作进度</p>
 <pre><code class="language-bash">git stash list
@@ -2309,21 +2319,21 @@ aa5673a 恢复了index.html
 <pre><code class="language-bash">git log --oneline -5
 </code></pre>
 <p>可以查看指定作者的提交</p>
-<pre><code class="language-bash">git log --online --author=&quot;einsli&quot;
+<pre><code class="language-bash">git log --online --author="einsli"
 </code></pre>
 <p>git log 也支持 grep 语法</p>
 <p>比如显示关于 index.html 的提交</p>
-<pre><code class="language-bash">git log --oneline --grep=&quot;index.html&quot;
+<pre><code class="language-bash">git log --oneline --grep="index.html"
 </code></pre>
 <p>也可以指定日志</p>
 <p>比如指定在 2020 年 11 月 1 号之前的提交</p>
-<pre><code class="language-bash">git log --oneline --before=&quot;2020-11-01&quot;
+<pre><code class="language-bash">git log --oneline --before="2020-11-01"
 </code></pre>
 <p>找出一个礼拜之前的提交</p>
-<pre><code class="language-bash">git log --oneline --before=&quot;1 week&quot;
+<pre><code class="language-bash">git log --oneline --before="1 week"
 </code></pre>
 <p>找出三天前的提交</p>
-<pre><code class="language-bash">git log --oneline --before=&quot;3 days&quot;
+<pre><code class="language-bash">git log --oneline --before="3 days"
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="git-http-方式免密克隆代码"><a class="header" href="#git-http-方式免密克隆代码">git http 方式免密克隆代码</a></h1>
 <p>免密拉取配置
@@ -2410,6 +2420,159 @@ master 和 dev 不可直接提交，需要 pull request, code review 后 merge</
 <p>refactor：重构 xxx 功能或方法</p>
 <p>scope  表示影响范围，可分为：模块、类库、方法等。</p>
 <p>subject  表示简短描述，最好不要超过 60 个字，如果有相关 Bug 的编号，建议在描述中加上。<br></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="harbor-基础操作"><a class="header" href="#harbor-基础操作">harbor 基础操作</a></h1>
+<p>这里主要是 harbor 安装以及基础操作</p>
+<ul>
+<li><a href="operations/harbor/harbor_install.html">harbor 安装与配置</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="harbor-安装与配置"><a class="header" href="#harbor-安装与配置">harbor 安装与配置</a></h1>
+<h2 id="前期准备-8"><a class="header" href="#前期准备-8">前期准备</a></h2>
+<p>依赖<code>docker</code>和 <code>docker-compose环境</code></p>
+<p>请参考</p>
+<p>👉🏻 <a href="operations/harbor/../docker/linux_docker_installed.html">docker 安装与配置</a></p>
+<p>👉🏻 <a href="operations/harbor/../docker/linux_docker_compose_installed.html">docker-compose 安装</a></p>
+<p>👉🏻 <a href="https://goharbor.io/">harbor 官方文档</a></p>
+<h2 id="安装-harbor"><a class="header" href="#安装-harbor">安装 harbor</a></h2>
+<h3 id="1下载离线包"><a class="header" href="#1下载离线包">1、下载离线包</a></h3>
+<p>harbor 离线包<a href="https://github.com/goharbor/harbor/releases">下载地址</a>
+<img src="operations/harbor/../../images/operations/harbor/harbor_pkg.png" alt="avatar" /></p>
+<pre><code class="language-shell"># Step 1: 下载选中的离线版本
+wget https://github.com/goharbor/harbor/releases/download/v2.10.2/harbor-offline-installer-v2.10.2.tgz
+</code></pre>
+<h3 id="2准备证书文件"><a class="header" href="#2准备证书文件">2、准备证书文件</a></h3>
+<p><strong>注:</strong> 如果不使用域名这一步可以跳过</p>
+<p>证书购买请参考，阿里云官方文档 👉🏻 <a href="https://www.alibabacloud.com/help/zh/ssl-certificate/getting-started/get-started-with-ssl-certificates-service">SSL 证书快速上手</a></p>
+<p>这里配置域名，下载后的 ssl 配置文件为 12808420_harbor.app.love_nginx.zip</p>
+<h3 id="3安装"><a class="header" href="#3安装">3、安装</a></h3>
+<p>解压下载的文件</p>
+<pre><code class="language-shell"># Step 1: 解压harbor 离线安装包
+tar -zxvf harbor-offline-installer-v2.10.2.tgz -C /usr/local/
+# Step 2: 解压 ssl 证书
+unzip 12808420_harbor.app.love_nginx.zip -d /usr/local/ssl/
+</code></pre>
+<h3 id="4配置"><a class="header" href="#4配置">4、配置</a></h3>
+<p>复制配置文件</p>
+<pre><code class="language-shell"># Step 1: 进入harbor 目录
+cd /usr/local/harbor
+# Step 2: 拷贝配置文件
+cp harbor.yml.tmp harbor.yml
+</code></pre>
+<p>修改配置文件</p>
+<pre><code class="language-yaml"># Configuration file of Harbor
+
+# The IP address or hostname to access admin UI and registry service.
+# DO NOT use localhost or 127.0.0.1, because Harbor needs to be accessed by external clients.
+-hostname: reg.mydomain.com
++hostname: harbor.app.love
+
+# http related config
+http:
+  # port for http, default is 80. If https enabled, this port will redirect to https port
+  port: 80
+
+# https related config
+https:
+  # https port for harbor, default is 443
+  port: 443
+  # The path of cert and key files for nginx
+- certificate: /your/certificate/path
++ certificate: /usr/local/harbor/ssl/harbor.app.love.pem
+- private_key: /your/private/key/path
++ private_key: /usr/local/harbor/ssl/harbor.aoo.love.key
+
+# # Uncomment following will enable tls communication between all harbor components
+# internal_tls:
+#   # set enabled to true means internal tls is enabled
+#   enabled: true
+#   # put your cert and key files on dir
+#   dir: /etc/harbor/tls/internal
+
+# Uncomment external_url if you want to enable external proxy
+# And when it enabled the hostname will no longer used
+# external_url: https://reg.mydomain.com:8433
+
+# The initial password of Harbor admin
+# It only works in first time to install harbor
+# Remember Change the admin password from UI after launching Harbor.
+- harbor_admin_password: Harbor12345
++ # 这里的是admin账户的密码，要在启动前改动，否则后期改动无效
++ harbor_admin_password: YourPassw0rd
+
+# Harbor DB configuration
+
+# The default data volume
+data_volume: /data
+...
+
+</code></pre>
+<h3 id="5启动-harbor"><a class="header" href="#5启动-harbor">5、启动 harbor</a></h3>
+<pre><code class="language-shell"># Step 1: 创建数据目录
+mkdir /data
+# Step 2: 进入harbor目录
+cd /usr/local/harbor
+# Step 3: 执行prepare命令，进入准备启动阶段，这里会检测你的环境等
+./prepare
+# Step 4: 准备阶段完成后，启动下载harbor，这里会下载并运行7个镜像
+./install.sh
+</code></pre>
+<p>使用 docker ps 查看是否启动(STATUS 均为 healthy 为成功，starting 说明在启动中)</p>
+<pre><code class="language-PlainText">CONTAINER ID   IMAGE                                 COMMAND                  CREATED      STATUS                PORTS                                                                            NAMES
+f33fa914b17a   goharbor/harbor-jobservice:v2.10.1    "/harbor/entrypoint.…"   4 days ago   Up 4 days (healthy)                                                                                    harbor-jobservice
+0056d04b6077   goharbor/nginx-photon:v2.10.1         "nginx -g 'daemon of…"   4 days ago   Up 4 days (healthy)   0.0.0.0:80-&gt;8080/tcp, :::80-&gt;8080/tcp, 0.0.0.0:443-&gt;8443/tcp, :::443-&gt;8443/tcp   nginx
+94f9f5615503   goharbor/harbor-core:v2.10.1          "/harbor/entrypoint.…"   4 days ago   Up 4 days (healthy)                                                                                    harbor-core
+b23a4327987d   goharbor/harbor-registryctl:v2.10.1   "/home/harbor/start.…"   4 days ago   Up 4 days (healthy)                                                                                    registryctl
+d1337e58ec54   goharbor/redis-photon:v2.10.1         "redis-server /etc/r…"   4 days ago   Up 4 days (healthy)                                                                                    redis
+4f4aeeae61dd   goharbor/harbor-db:v2.10.1            "/docker-entrypoint.…"   4 days ago   Up 4 days (healthy)                                                                                    harbor-db
+d4ef619a56d0   goharbor/harbor-portal:v2.10.1        "nginx -g 'daemon of…"   4 days ago   Up 4 days (healthy)                                                                                    harbor-portal
+d3ef7071fd2a   goharbor/registry-photon:v2.10.1      "/home/harbor/entryp…"   4 days ago   Up 4 days (healthy)                                                                                    registry
+6e10fd5cd5f3   goharbor/harbor-log:v2.10.1           "/bin/sh -c /usr/loc…"   4 days ago   Up 4 days (healthy)   127.0.0.1:1514-&gt;10514/tcp                                                        harbor-log
+</code></pre>
+<h3 id="5访问-harbor"><a class="header" href="#5访问-harbor">5、访问 harbor</a></h3>
+<p>通过域名访问</p>
+<p><a href="https://harbor.app.love">https://harbor.app.love</a></p>
+<p><img src="operations/harbor/../../images/operations/harbor/harbor_login.png" alt="avatar" /></p>
+<p>终端操作</p>
+<pre><code class="language-shell"># Step 1: 在要使用harbor的主机上创建 /etc/docker/daemon.json 文件
+sudo tee /etc/docker/daemon.json &lt;&lt;-'EOF'
+{
+    "registry-mirrors": [https://harbor.app.love"]
+}
+EOF
+# Step 2: 重启daemon
+systemctl daemon-reload
+# Step 3: 重启docker
+systemctl restart docker
+# Step 4: 登陆harbor（注意：docker login harbor的地址）
+docker login harbor.app.love -u admin -p YourPassw0rd
+</code></pre>
+<p>登录输出如下</p>
+<pre><code class="language-PlainText">WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+</code></pre>
+<h3 id="6集成到-k8s"><a class="header" href="#6集成到-k8s">6、集成到 k8s</a></h3>
+<p>在对应命名空间，创建<code>secret</code>后引用即可</p>
+<pre><code class="language-shell">kubectl create secret docker-registry docker-key \
+    --docker-server=harbor.app.love \
+    --docker-username='admin' \
+    --docker-password='YourPassw0rd' \
+    --docker-email='email@email.com' \
+    -n app-test
+</code></pre>
+<p>引用如下</p>
+<pre><code class="language-yaml">---
+spec:
+  containers: ...
+  imagePullSecrets:
+    - name: docker-key
+</code></pre>
+<h4 id="参考文档-2"><a class="header" href="#参考文档-2">参考文档</a></h4>
+<ul>
+<li><a href="https://juejin.cn/post/7222656390548357177/">Harbor 安装及配置</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="dns-运维相关"><a class="header" href="#dns-运维相关">dns 运维相关</a></h1>
 <p>这里主要是 dns 基础运维，涉及到 dns 相关原理以和相关问题的处理.</p>
 <ul>
@@ -2551,7 +2714,7 @@ ipw.cn.			600	IN	A	106.55.75.123
 ipw.cn.			86400	IN	NS	ns4.dnsv2.com.
 ipw.cn.			86400	IN	NS	ns3.dnsv2.com.
 </code></pre>
-<h4 id="参考文档-2"><a class="header" href="#参考文档-2">参考文档</a></h4>
+<h4 id="参考文档-3"><a class="header" href="#参考文档-3">参考文档</a></h4>
 <ul>
 <li><a href="https://ipw.cn/dns/">ipw.cn</a></li>
 </ul>
@@ -2588,7 +2751,7 @@ systemctl enable mariadb
 systemctl restart mariadb
 </code></pre>
 <p>设置登陆密码</p>
-<pre><code class="language-shell">mysql -e &quot;SET PASSWORD FOR 'root'@'localhost' = PASSWORD('passw0rd');&quot;
+<pre><code class="language-shell">mysql -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('passw0rd');"
 </code></pre>
 <p>开启远程登录</p>
 <p>登录 mysql 后，执行一下语句，开启远程登录</p>
@@ -2616,7 +2779,7 @@ wget -q $urlpath || exit 1
 <p><strong>注:</strong> passw0rd 为第一步创建 mariab 时候的创建的密码</p>
 <p>(5) 修改<code>n9e</code>数据库配置</p>
 <p>配置文件在安装目录下 <code>etc/config.toml</code></p>
-<pre><code class="language-shell">DSN=&quot;root:passw0rd@tcp(127.0.0.1:3306)/n9e_v6?charset=utf8mb4&amp;parseTime=True&amp;loc=Local&amp;allowNativePasswords=true&quot;
+<pre><code class="language-shell">DSN="root:passw0rd@tcp(127.0.0.1:3306)/n9e_v6?charset=utf8mb4&amp;parseTime=True&amp;loc=Local&amp;allowNativePasswords=true"
 </code></pre>
 <p>(6) 启动测试</p>
 <p>启动 n9e</p>
@@ -2661,50 +2824,50 @@ Email = 'mail'
 </blockquote>
 <h3 id="一主机相关"><a class="header" href="#一主机相关">一、主机相关</a></h3>
 <p>主机存活 sql(node-exporter 服务异常或者服务器宕掉就告警)</p>
-<p><code>sql up{app=&quot;node-exporter&quot;,instance=~&quot;192.*&quot;} == 0 </code></p>
+<p><code>sql up{app="node-exporter",instance=~"192.*"} == 0 </code></p>
 <p><strong>注:这里对主机的 ip 进行了相关的筛选，把 instance 里面的匹配值换成自己对应的 ip 网段即可</strong></p>
 <p>主机内存告警(内存使用率超过 96 告警)</p>
 <pre><code class="language-sql">((node_memory_MemTotal_bytes - (node_memory_MemFree_bytes + node_memory_Buffers_bytes + node_memory_Cached_bytes)) / node_memory_MemTotal_bytes) * 100 &gt; 96
 </code></pre>
 <p>主机 CPU 监控(CPU 使用率超过 90 告警)</p>
-<pre><code class="language-sql">100 - ((avg by(instance, job, env) (irate(node_cpu_seconds_total{mode=&quot;idle&quot;}[30s]))) * 100) &gt; 90
+<pre><code class="language-sql">100 - ((avg by(instance, job, env) (irate(node_cpu_seconds_total{mode="idle"}[30s]))) * 100) &gt; 90
 </code></pre>
 <p>主机网络流量监控(超过 200M 就告警)</p>
-<pre><code class="language-sql">avg by(instance, job, env) (irate(node_network_receive_bytes_total{device!=&quot;lo&quot;}[5m]) * 8) / (1000 * 1000) &gt; 200
+<pre><code class="language-sql">avg by(instance, job, env) (irate(node_network_receive_bytes_total{device!="lo"}[5m]) * 8) / (1000 * 1000) &gt; 200
 </code></pre>
 <p>主机磁盘监控(超过 90 就告警)</p>
-<pre><code class="language-sql">100 - (node_filesystem_avail_bytes{instance=~&quot;172.16.*&quot;} * 100) / node_filesystem_size_bytes{instance=~&quot;172.16.*&quot;} &gt; 90
+<pre><code class="language-sql">100 - (node_filesystem_avail_bytes{instance=~"172.16.*"} * 100) / node_filesystem_size_bytes{instance=~"172.16.*"} &gt; 90
 </code></pre>
 <h3 id="二k8s-相关"><a class="header" href="#二k8s-相关">二、k8s 相关</a></h3>
 <p>线上 k8s 节点 CPU 监控告警(2 分钟内，CPU 使用率超过 90 就告警)</p>
-<pre><code class="language-sql">100 - avg by(instance) (rate(node_cpu_seconds_total{mode=&quot;idle&quot;,instance =~ &quot;172.18.*&quot;}[2m])) * 100 &gt; 90
+<pre><code class="language-sql">100 - avg by(instance) (rate(node_cpu_seconds_total{mode="idle",instance =~ "172.18.*"}[2m])) * 100 &gt; 90
 </code></pre>
 <p>注:跟主机 CPU 监控是同一类，单独列出来放到 k8s 里面了</p>
 <p>线上 k8s 节点状态监控</p>
-<pre><code class="language-sql">kube_node_status_condition{condition=&quot;Ready&quot;,status=&quot;true&quot;, node=~&quot;cn-hangzhou.*&quot;} == 0
+<pre><code class="language-sql">kube_node_status_condition{condition="Ready",status="true", node=~"cn-hangzhou.*"} == 0
 </code></pre>
 <p>线上 k8s 节点磁盘监控(磁盘使用率超过 90 就告警)</p>
-<pre><code class="language-sql">100 - (node_filesystem_avail_bytes{instance=~&quot;172.18.*&quot;} * 100) / node_filesystem_size_bytes{instance=~&quot;172.18.*&quot;} &gt; 90
+<pre><code class="language-sql">100 - (node_filesystem_avail_bytes{instance=~"172.18.*"} * 100) / node_filesystem_size_bytes{instance=~"172.18.*"} &gt; 90
 </code></pre>
 <p>注:跟主机 磁盘 监控是同一类，单独列出来放到 k8s 里面了</p>
 <p>线上 k8s 节点内存监控告警(内存使用率超过 95 就告警)</p>
-<pre><code class="language-sql">100 - node_memory_MemAvailable_bytes{instance =~ &quot;172.18.*&quot;} / node_memory_MemTotal_bytes{instance =~ &quot;172.18.*&quot;} * 100 &gt; 95
+<pre><code class="language-sql">100 - node_memory_MemAvailable_bytes{instance =~ "172.18.*"} / node_memory_MemTotal_bytes{instance =~ "172.18.*"} * 100 &gt; 95
 </code></pre>
 <h3 id="三pod-相关"><a class="header" href="#三pod-相关">三、pod 相关</a></h3>
 <p>线上 pod CPU 使用率监控 (5 分钟之内，CPU 使用率超过 80 就告警)</p>
-<pre><code class="language-sql">(sum by(name) (rate(container_cpu_usage_seconds_total{image!=&quot;&quot;,namespace=~&quot;moushi-(prod|pre)&quot;}[5m])) * 100) &gt; 80
+<pre><code class="language-sql">(sum by(name) (rate(container_cpu_usage_seconds_total{image!="",namespace=~"moushi-(prod|pre)"}[5m])) * 100) &gt; 80
 </code></pre>
 <p>线上 pod 内存使用率监控(pod 内存使用率超过 80 就告警)</p>
-<pre><code class="language-sql">(sum(container_memory_working_set_bytes{id!=&quot;/&quot;,namespace=~&quot;moushi-(prod|pre)&quot;}) BY (instance,name,container,pod_name,namespace) / sum(container_spec_memory_limit_bytes{id!=&quot;/&quot;,namespace=~&quot;moushi-(prod|pre)&quot;} &gt; 0) BY (instance,name,container,pod_name,namespace) * 100) &gt; 98
+<pre><code class="language-sql">(sum(container_memory_working_set_bytes{id!="/",namespace=~"moushi-(prod|pre)"}) BY (instance,name,container,pod_name,namespace) / sum(container_spec_memory_limit_bytes{id!="/",namespace=~"moushi-(prod|pre)"} &gt; 0) BY (instance,name,container,pod_name,namespace) * 100) &gt; 98
 </code></pre>
 <p>线上 pod 网络流量监控(pod 流入流量 1 分钟之内超过 50M 就告警)</p>
-<pre><code class="language-sql">sum by(name) (irate(container_network_receive_bytes_total{container_name=&quot;POD&quot;,namespace=~&quot;moushi-(pre|prod)&quot;}[1m])) &gt; 1024 * 1024 * 50
+<pre><code class="language-sql">sum by(name) (irate(container_network_receive_bytes_total{container_name="POD",namespace=~"moushi-(pre|prod)"}[1m])) &gt; 1024 * 1024 * 50
 </code></pre>
 <p>pod 启动失败监控(10 分钟之内，启动失败一次就告警)</p>
-<pre><code class="language-sql">avg_over_time(kube_pod_container_status_waiting_reason{namespace=~&quot;moushi-(pre|prod)&quot;,reason!=&quot;PodInitializing&quot;, reason!=&quot;ContainerCreating&quot;}[10m]) == 1
+<pre><code class="language-sql">avg_over_time(kube_pod_container_status_waiting_reason{namespace=~"moushi-(pre|prod)",reason!="PodInitializing", reason!="ContainerCreating"}[10m]) == 1
 </code></pre>
 <p>线上 pod 重启监控(5 分钟之内，pod 重启次数超过一次就告警)</p>
-<pre><code class="language-sql">increase(kube_pod_container_status_restarts_total{namespace=~&quot;moushi-(prod|pre)&quot;}[5m]) &gt; 0
+<pre><code class="language-sql">increase(kube_pod_container_status_restarts_total{namespace=~"moushi-(prod|pre)"}[5m]) &gt; 0
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="prometheus-域名状态码监控"><a class="header" href="#prometheus-域名状态码监控">prometheus 域名状态码监控</a></h1>
 <h2 id="一安装-blackbox"><a class="header" href="#一安装-blackbox">一、安装 blackbox</a></h2>
@@ -2771,26 +2934,26 @@ data:
         prober: http
         timeout: 10s
         http:
-          valid_http_versions: [&quot;HTTP/1.1&quot;, &quot;HTTP/2&quot;]
+          valid_http_versions: ["HTTP/1.1", "HTTP/2"]
           valid_status_codes: [200]
           method: GET
-          preferred_ip_protocol: &quot;ip4&quot;
+          preferred_ip_protocol: "ip4"
       http_post_2xx: # http post 监测模块
         prober: http
         timeout: 10s
         http:
-          valid_http_versions: [&quot;HTTP/1.1&quot;, &quot;HTTP/2&quot;]
+          valid_http_versions: ["HTTP/1.1", "HTTP/2"]
           method: POST
-          preferred_ip_protocol: &quot;ip4&quot;
+          preferred_ip_protocol: "ip4"
       tcp_connect:  # TCP 检测模块
         prober: tcp
         timeout: 10s
       dns:  # DNS 检测模块
         prober: dns
         dns:
-          transport_protocol: &quot;tcp&quot;  # 默认是 udp
-          preferred_ip_protocol: &quot;ip4&quot;  # 默认是 ip6
-          query_name: &quot;kubernetes.default.svc.cluster.local&quot;
+          transport_protocol: "tcp"  # 默认是 udp
+          preferred_ip_protocol: "ip4"  # 默认是 ip6
+          query_name: "kubernetes.default.svc.cluster.local"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -2919,7 +3082,7 @@ curl -X POST http://prometheus.com/-/reload
 <p>另外一种查询方式是，查询 10 分钟之内，状态码有变化的数据</p>
 <pre><code class="language-sql">changes(probe_http_status_code[10m])
 </code></pre>
-<h4 id="参考文档-3"><a class="header" href="#参考文档-3">参考文档</a></h4>
+<h4 id="参考文档-4"><a class="header" href="#参考文档-4">参考文档</a></h4>
 <ul>
 <li><a href="https://cloud.tencent.com/developer/article/1782670">使用 Prometheus 进行黑盒(blackbox) 监控</a></li>
 </ul>

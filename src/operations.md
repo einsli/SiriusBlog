@@ -12,6 +12,8 @@
 
 - [git](operations/git.md)
 
+- [harbor](operations/harbor.md)
+
 - [mongodb](operations/mongodb.md)
 
 - [elasticsearch](operations/elasticsearch.md)

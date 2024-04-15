@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="zh" class="sidebar-visible no-js navy">
+<html lang="zh" class="navy" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -10,7 +10,7 @@
         
         <meta name="description" content="Sirius运维开发笔记">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="../../favicon.svg">
         <link rel="shortcut icon" href="../../favicon.png">
@@ -31,7 +31,7 @@
         <!-- Custom theme stylesheets -->
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
@@ -61,31 +61,38 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('navy')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var html = document.querySelector('html');
+            var body = document.querySelector('body');
             var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="../../operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_kernel_upgrade_online.html" class="active"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级(线上)</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_kernel_upgrade_offline.html"><strong aria-hidden="true">2.1.3.</strong> linux 内核升级(离线)</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_supervisor_install.html"><strong aria-hidden="true">2.1.4.</strong> supervisord 安装配置</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_jdk_install.html"><strong aria-hidden="true">2.1.5.</strong> linux Jdk1.8 安装与配置</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_ops_issues.html"><strong aria-hidden="true">2.1.6.</strong> linux 运维问题排查</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_installed.html"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_issues.html"><strong aria-hidden="true">2.2.3.</strong> docker 相关问题</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/mysql.html"><strong aria-hidden="true">2.3.</strong> mysql</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/mysql/mysql_binary_installed.html"><strong aria-hidden="true">2.3.1.</strong> mysql 二进制安装(mysql8 版本)</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/redis.html"><strong aria-hidden="true">2.4.</strong> redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/redis/redis_binary_installed.html"><strong aria-hidden="true">2.4.1.</strong> redis 二进制安装与配置</a></li><li class="chapter-item expanded "><a href="../../operations/redis/redis_docker_installed.html"><strong aria-hidden="true">2.4.2.</strong> redis docker-compose 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/mongodb.html"><strong aria-hidden="true">2.5.</strong> mongodb</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/mongodb/mongodb_docker_installed.html"><strong aria-hidden="true">2.5.1.</strong> mongodb docker-compose 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/etcd.html"><strong aria-hidden="true">2.6.</strong> etcd</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/etcd/etcd_single_node_nossl.html"><strong aria-hidden="true">2.6.1.</strong> etcd docker 安装(单节点无 ssl)</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/elasticsearch.html"><strong aria-hidden="true">2.7.</strong> elasticsearch</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/elasticsearch/es_docker_installed.html"><strong aria-hidden="true">2.7.1.</strong> elasticsearch docker-compose 安装与配置(7.10.0 版本)</a></li><li class="chapter-item expanded "><a href="../../operations/elasticsearch/es_ik_installed.html"><strong aria-hidden="true">2.7.2.</strong> elasticsearch ik 分词器安装(7.10.0 版本)</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/git.html"><strong aria-hidden="true">2.8.</strong> git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/git/git_operation.html"><strong aria-hidden="true">2.8.1.</strong> git 版本控制</a></li><li class="chapter-item expanded "><a href="../../operations/git/git_clone_without_pass.html"><strong aria-hidden="true">2.8.2.</strong> git http 方式免密克隆代码</a></li><li class="chapter-item expanded "><a href="../../operations/git/git_dev_specification.html"><strong aria-hidden="true">2.8.3.</strong> git 开发管理规范</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/dns.html"><strong aria-hidden="true">2.9.</strong> dns</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/dns/dns_resolution.html"><strong aria-hidden="true">2.9.1.</strong> dns 的解析流程</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/monitor.html"><strong aria-hidden="true">3.1.</strong> 监控</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/n9e_install.html"><strong aria-hidden="true">3.1.1.</strong> 夜莺监控安装配置</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/n9e_ldap_config.html"><strong aria-hidden="true">3.1.2.</strong> 夜莺配置 ldap 单点登录</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/alert_prom_sql.html"><strong aria-hidden="true">3.1.3.</strong> prometheus 监控告警 sql</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/prometheus_domain_monitor.html"><strong aria-hidden="true">3.1.4.</strong> prometheus 监控域名</a></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes.html"><strong aria-hidden="true">3.2.</strong> kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_sa.html"><strong aria-hidden="true">3.2.1.</strong> kubernetes service account</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_sa/k8s_sa_kubeconfig.html"><strong aria-hidden="true">3.2.1.1.</strong> kubernetees 基于 sa 创建 kubeconfig 访问(集群版)</a></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_issues.html"><strong aria-hidden="true">3.2.2.</strong> k8s 相关问题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_issues/k8s_secret_issues.html"><strong aria-hidden="true">3.2.2.1.</strong> kubernetes secret 相关问题</a></li></ol></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="../../operations.html"><strong aria-hidden="true">2.</strong> 基础运维</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux.html"><strong aria-hidden="true">2.1.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/linux/linux_base_config.html"><strong aria-hidden="true">2.1.1.</strong> linux 基础配置</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_kernel_upgrade_online.html" class="active"><strong aria-hidden="true">2.1.2.</strong> linux 内核升级(线上)</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_kernel_upgrade_offline.html"><strong aria-hidden="true">2.1.3.</strong> linux 内核升级(离线)</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_supervisor_install.html"><strong aria-hidden="true">2.1.4.</strong> supervisord 安装配置</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_jdk_install.html"><strong aria-hidden="true">2.1.5.</strong> linux Jdk1.8 安装与配置</a></li><li class="chapter-item expanded "><a href="../../operations/linux/linux_ops_issues.html"><strong aria-hidden="true">2.1.6.</strong> linux 运维问题排查</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/docker.html"><strong aria-hidden="true">2.2.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_installed.html"><strong aria-hidden="true">2.2.1.</strong> docker 安装与配置</a></li><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_compose_installed.html"><strong aria-hidden="true">2.2.2.</strong> docker-compose 安装</a></li><li class="chapter-item expanded "><a href="../../operations/docker/linux_docker_issues.html"><strong aria-hidden="true">2.2.3.</strong> docker 相关问题</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/mysql.html"><strong aria-hidden="true">2.3.</strong> mysql</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/mysql/mysql_binary_installed.html"><strong aria-hidden="true">2.3.1.</strong> mysql 二进制安装(mysql8 版本)</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/redis.html"><strong aria-hidden="true">2.4.</strong> redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/redis/redis_binary_installed.html"><strong aria-hidden="true">2.4.1.</strong> redis 二进制安装与配置</a></li><li class="chapter-item expanded "><a href="../../operations/redis/redis_docker_installed.html"><strong aria-hidden="true">2.4.2.</strong> redis docker-compose 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/mongodb.html"><strong aria-hidden="true">2.5.</strong> mongodb</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/mongodb/mongodb_docker_installed.html"><strong aria-hidden="true">2.5.1.</strong> mongodb docker-compose 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/etcd.html"><strong aria-hidden="true">2.6.</strong> etcd</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/etcd/etcd_single_node_nossl.html"><strong aria-hidden="true">2.6.1.</strong> etcd docker 安装(单节点无 ssl)</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/elasticsearch.html"><strong aria-hidden="true">2.7.</strong> elasticsearch</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/elasticsearch/es_docker_installed.html"><strong aria-hidden="true">2.7.1.</strong> elasticsearch docker-compose 安装与配置(7.10.0 版本)</a></li><li class="chapter-item expanded "><a href="../../operations/elasticsearch/es_ik_installed.html"><strong aria-hidden="true">2.7.2.</strong> elasticsearch ik 分词器安装(7.10.0 版本)</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/git.html"><strong aria-hidden="true">2.8.</strong> git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/git/git_operation.html"><strong aria-hidden="true">2.8.1.</strong> git 版本控制</a></li><li class="chapter-item expanded "><a href="../../operations/git/git_clone_without_pass.html"><strong aria-hidden="true">2.8.2.</strong> git http 方式免密克隆代码</a></li><li class="chapter-item expanded "><a href="../../operations/git/git_dev_specification.html"><strong aria-hidden="true">2.8.3.</strong> git 开发管理规范</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/harbor.html"><strong aria-hidden="true">2.9.</strong> harbor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/harbor/harbor_install.html"><strong aria-hidden="true">2.9.1.</strong> harbor 安装与配置</a></li></ol></li><li class="chapter-item expanded "><a href="../../operations/dns.html"><strong aria-hidden="true">2.10.</strong> dns</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../operations/dns/dns_resolution.html"><strong aria-hidden="true">2.10.1.</strong> dns 的解析流程</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations.html"><strong aria-hidden="true">3.</strong> 云原生</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/monitor.html"><strong aria-hidden="true">3.1.</strong> 监控</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/n9e_install.html"><strong aria-hidden="true">3.1.1.</strong> 夜莺监控安装配置</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/n9e_ldap_config.html"><strong aria-hidden="true">3.1.2.</strong> 夜莺配置 ldap 单点登录</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/alert_prom_sql.html"><strong aria-hidden="true">3.1.3.</strong> prometheus 监控告警 sql</a></li><li class="chapter-item expanded "><a href="../../cloud_operations/monitor/prometheus_domain_monitor.html"><strong aria-hidden="true">3.1.4.</strong> prometheus 监控域名</a></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes.html"><strong aria-hidden="true">3.2.</strong> kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_sa.html"><strong aria-hidden="true">3.2.1.</strong> kubernetes service account</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_sa/k8s_sa_kubeconfig.html"><strong aria-hidden="true">3.2.1.1.</strong> kubernetees 基于 sa 创建 kubeconfig 访问(集群版)</a></li></ol></li><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_issues.html"><strong aria-hidden="true">3.2.2.</strong> k8s 相关问题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cloud_operations/kubernetes/kubernetes_issues/k8s_secret_issues.html"><strong aria-hidden="true">3.2.2.1.</strong> kubernetes secret 相关问题</a></li></ol></li></ol></li></ol></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -116,9 +123,9 @@
                                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -199,7 +206,7 @@ ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡�
 <pre><code class="language-shell">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 </code></pre>
 <h4 id="3-查看可用的系统内核包"><a class="header" href="#3-查看可用的系统内核包">(3) 查看可用的系统内核包</a></h4>
-<pre><code class="language-shell">yum --disablerepo=&quot;*&quot; --enablerepo=&quot;elrepo-kernel&quot; list available
+<pre><code class="language-shell">yum --disablerepo="*" --enablerepo="elrepo-kernel" list available
 </code></pre>
 <p>输出如下</p>
 <pre><code class="language-PlainText">Loaded plugins: fastestmirror
@@ -232,7 +239,7 @@ Loading mirror speeds from cached hostfile
 <h4 id="5-设置-grub2"><a class="header" href="#5-设置-grub2">(5) 设置 grub2</a></h4>
 <p>内核安装好后，需要设置为默认启动选项并重启后才会生效</p>
 <p>1、 查看系统上的所有可用内核</p>
-<pre><code class="language-shell">awk -F\' '$1==&quot;menuentry &quot; {print i++ &quot; : &quot; $2}' /etc/grub2.cfg
+<pre><code class="language-shell">awk -F\' '$1=="menuentry " {print i++ " : " $2}' /etc/grub2.cfg
 </code></pre>
 <p>输出如下</p>
 <pre><code class="language-PlainText">0 : CentOS Linux (4.18.7-1.el7.elrepo.x86_64) 7 (Core)
@@ -251,12 +258,12 @@ Loading mirror speeds from cached hostfile
 <pre><code class="language-shell">vim /etc/default/grub
 </code></pre>
 <pre><code class="language-PlainText">GRUB_TIMEOUT=5
-GRUB_DISTRIBUTOR=&quot;$(sed 's, release .*$,,g' /etc/system-release)&quot;
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
 GRUB_DEFAULT=0
 GRUB_DISABLE_SUBMENU=true
-GRUB_TERMINAL_OUTPUT=&quot;console&quot;
-GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rd.lvm.lv=cl/root rhgb quiet&quot;
-GRUB_DISABLE_RECOVERY=&quot;true&quot;
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="crashkernel=auto rd.lvm.lv=cl/root rhgb quiet"
+GRUB_DISABLE_RECOVERY="true"
 </code></pre>
 <p>3、生成 grub 配置文件并重启</p>
 <pre><code class="language-shell">grub2-mkconfig -o /boot/grub2/grub.cfg
@@ -318,7 +325,7 @@ kernel-3.10.0-862.11.6.el7.x86_64
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../../operations/linux/linux_kernel_upgrade_offline.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../operations/linux/linux_kernel_upgrade_offline.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -332,7 +339,7 @@ kernel-3.10.0-862.11.6.el7.x86_64
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../../operations/linux/linux_kernel_upgrade_offline.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../operations/linux/linux_kernel_upgrade_offline.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

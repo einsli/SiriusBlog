@@ -31,6 +31,8 @@
     - [git 版本控制](operations/git/git_operation.md)
     - [git http 方式免密克隆代码](operations/git/git_clone_without_pass.md)
     - [git 开发管理规范](operations/git/git_dev_specification.md)
+  - [harbor](operations/harbor.md)
+    - [harbor 安装与配置](operations/harbor/harbor_install.md)
   - [dns](operations/dns.md)
     - [dns 的解析流程](operations/dns/dns_resolution.md)
 
