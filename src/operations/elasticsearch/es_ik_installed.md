@@ -34,7 +34,8 @@ volumes:
   - /etc/localtime:/etc/localtime
   - ./es_config:/usr/share/elasticsearch/config
   - ./es_data:/usr/share/elasticsearch/data
-  - ./plugins:/usr/share/elasticsearch/plugins # 新增
+-
++  - ./plugins:/usr/share/elasticsearch/plugins
 ```
 
 完整`docker-compose.yaml`文件如下
