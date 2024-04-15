@@ -34,7 +34,6 @@ volumes:
   - /etc/localtime:/etc/localtime
   - ./es_config:/usr/share/elasticsearch/config
   - ./es_data:/usr/share/elasticsearch/data
--
 +  - ./plugins:/usr/share/elasticsearch/plugins
 ```
 
