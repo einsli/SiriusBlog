@@ -56,7 +56,7 @@ services:
       - /etc/localtime:/etc/localtime
       - ./es_config:/usr/share/elasticsearch/config
       - ./es_data:/usr/share/elasticsearch/data
-      - ./plugins:/usr/share/elasticsearch/plugins # 新增
++     - ./plugins:/usr/share/elasticsearch/plugins
     ports:
       - '12200:9200'
       - '12300:9300'

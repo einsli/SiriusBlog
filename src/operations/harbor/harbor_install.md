@@ -40,7 +40,7 @@ wget https://github.com/goharbor/harbor/releases/download/v2.10.2/harbor-offline
 # Step 1: 解压harbor 离线安装包
 tar -zxvf harbor-offline-installer-v2.10.2.tgz -C /usr/local/
 # Step 2: 解压 ssl 证书
-unzip 12808420_harbor.app.love_nginx.zip -d /usr/local/ssl/
+unzip 12808420_harbor.app.love_nginx.zip -d /usr/local/harbor/ssl/
 ```
 
 ### 4、配置

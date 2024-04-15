@@ -195,7 +195,7 @@ services:
       ELASTIC_PASSWORD: 'Passw0rd'
     volumes:
       - /etc/localtime:/etc/localtime
-      - ./es_config:/usr/share/elasticsearch/config # 新增
++     - ./es_config:/usr/share/elasticsearch/config
       - ./es_data:/usr/share/elasticsearch/data
     ports:
       - '12200:9200'
@@ -213,7 +213,7 @@ services:
       - ELASTICSEARCH_URL=http://elasticsearch:9200
     volumes:
       - /etc/localtime:/etc/localtime
-      - ./kibana_config:/usr/share/kibana/config # 新增
++     - ./kibana_config:/usr/share/kibana/config
     ports:
       - '8601:5601'
     links:
