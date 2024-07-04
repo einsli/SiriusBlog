@@ -36,6 +36,10 @@
     - [harbor 安装与配置](operations/harbor/harbor_install.md)
   - [dns](operations/dns.md)
     - [dns 的解析流程](operations/dns/dns_resolution.md)
+  - [node](operations/node.md)
+    - [node 安装与配置](operations/node/node_install.md)
+  - [jenkins](operations/jenkins.md)
+    - [jenkins 安装与配置](operations/jenkins/jenkins_install.md)
 
 - [云原生](cloud_operations.md)
   - [监控](cloud_operations/monitor.md)
