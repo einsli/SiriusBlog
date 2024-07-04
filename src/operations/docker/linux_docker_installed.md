@@ -81,10 +81,16 @@ WantedBy=multi-user.target
 EOF
 ```
 
-移动 docker.service 到如下目录
+移动 `docker.service` 到如下目录
 
 ```shell
 mv docker.service /usr/lib/systemd/system/
+```
+
+创建 `daemon.json` 默认配置(这个适用于`/etc/docker` 不存在的情况下)
+
+```shell
+mkdir /etc/docker && echo "{}" > /etc/docker/daemon.json
 ```
 
 重新加载配置

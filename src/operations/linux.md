@@ -12,4 +12,6 @@
 
 - [linux Jdk1.8 安装与配置](linux/linux_jdk_install.md)
 
-- [linux 运维问题排查](linux/linux_ops_issues.md)
+- [linux 运维小技巧](linux/linux_ops_skills.md)
+
+- [linux 运维 CPU 负载过高问题排查](linux/linux_ops_cup_usage_high.md)
